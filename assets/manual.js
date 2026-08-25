@@ -121,6 +121,26 @@
    placeholder instead of a broken icon. Drop the real file in with the
    matching name and it appears automatically. */
 function mediaPending(el) {
+  /* Extension fallback. If the page asks for a .jpg and the real file is a .png
+     (or the reverse), retry the other extensions before giving up. Saves having
+     to rename or convert files just to match what the HTML expects. */
+  if (el.tagName === "IMG") {
+    var src = el.getAttribute("src") || "";
+    var match = src.match(/\.(jpg|jpeg|png|webp)$/i);
+    if (match) {
+      var tried = el.dataset.triedExt ? el.dataset.triedExt.split(",") : [];
+      tried.push(match[1].toLowerCase());
+      var next = ["jpg", "png", "jpeg", "webp"].filter(function (ext) {
+        return tried.indexOf(ext) === -1;
+      })[0];
+      if (next) {
+        el.dataset.triedExt = tried.join(",");
+        el.setAttribute("src", src.replace(/\.(jpg|jpeg|png|webp)$/i, "." + next));
+        return;
+      }
+    }
+  }
+
   const fig = el.closest("figure") || el.parentElement;
   const holder = el.tagName === "SOURCE" ? el.parentElement : el;
   const kind = holder.dataset.kind || (holder.tagName === "VIDEO" ? "Video" : "Photo");
