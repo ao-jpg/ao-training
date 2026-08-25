@@ -1,4 +1,4 @@
-/* Alexandria Orthodontics - Clinical Training Manual
+/* Alexandria Orthodontics — Clinical Training Manual
    Shared behavior for the hub page and all day pages. */
 
 (function () {
@@ -55,7 +55,7 @@
     });
   }
 
-  /* ---------------- day page ---------------- */
+  /* ---------------- checklist ---------------- */
 
   function wireChecklist(box) {
     const dayKey = "day" + (box.dataset.day || "0");
@@ -89,6 +89,8 @@
     render();
   }
 
+  /* ---------------- prev / next ---------------- */
+
   function wirePager(nav) {
     if (typeof TRAINING_DAYS === "undefined") return;
     const n = parseInt(nav.dataset.day, 10);
@@ -106,24 +108,51 @@
     nav.innerHTML = html;
   }
 
-  /* ---------------- init ---------------- */
-
   document.addEventListener("DOMContentLoaded", function () {
     const hub = document.getElementById("hub");
     if (hub) buildHub(hub);
-
     document.querySelectorAll(".checklist[data-day]").forEach(wireChecklist);
     document.querySelectorAll(".pager[data-day]").forEach(wirePager);
   });
 })();
 
-/* Graceful media fallback: swaps a missing image or video for a labelled
-   placeholder instead of a broken icon. Drop the real file in with the
-   matching name and it appears automatically. */
+
+/* ===============================================================
+   GOOGLE DRIVE VIDEO RESOLUTION
+
+   Looks up each video against the DRIVE_VIDEOS map in days.js.
+   If an ID is present, the local <video> is swapped for the Drive
+   player. If not, the page falls back to a local MP4, and failing
+   that, a neutral "not yet added" panel.
+   =============================================================== */
+
+function aoDriveFrame(id) {
+  var wrap = document.createElement("div");
+  wrap.className = "driveframe";
+  wrap.innerHTML =
+    '<iframe src="https://drive.google.com/file/d/' + id + '/preview" ' +
+    'allow="autoplay" allowfullscreen loading="lazy"></iframe>';
+  return wrap;
+}
+
+function aoDriveIdFor(file) {
+  if (typeof DRIVE_VIDEOS === "undefined" || !file) return "";
+  var key = String(file).replace(/^video\//, "").replace(/\.[a-z0-9]+$/i, "");
+  return (DRIVE_VIDEOS[key] || "").trim();
+}
+
+function aoResolveDriveVideos() {
+  document.querySelectorAll("video[data-file]").forEach(function (v) {
+    var id = aoDriveIdFor(v.dataset.file);
+    if (id) v.replaceWith(aoDriveFrame(id));
+  });
+}
+
+/* Missing-media fallback, with extension and Drive checks first. */
 function mediaPending(el) {
-  /* Extension fallback. If the page asks for a .jpg and the real file is a .png
-     (or the reverse), retry the other extensions before giving up. Saves having
-     to rename or convert files just to match what the HTML expects. */
+
+  /* Images: if the page asks for .jpg and the real file is .png (or the
+     reverse), retry the other extensions before giving up. */
   if (el.tagName === "IMG") {
     var src = el.getAttribute("src") || "";
     var match = src.match(/\.(jpg|jpeg|png|webp)$/i);
@@ -141,14 +170,21 @@ function mediaPending(el) {
     }
   }
 
-  const fig = el.closest("figure") || el.parentElement;
-  const holder = el.tagName === "SOURCE" ? el.parentElement : el;
-  const kind = holder.dataset.kind || (holder.tagName === "VIDEO" ? "Video" : "Photo");
-  const title = holder.dataset.title || "Media coming soon";
-  const note = holder.dataset.note || "";
-  const file = holder.dataset.file || (holder.getAttribute("src") || "");
+  var holder = el.tagName === "SOURCE" ? el.parentElement : el;
+  var fig = holder.closest ? holder.closest("figure") : null;
 
-  const div = document.createElement("div");
+  /* Videos: a local file may be missing simply because it lives on Drive. */
+  if (holder.tagName === "VIDEO") {
+    var driveId = aoDriveIdFor(holder.dataset.file);
+    if (driveId) { holder.replaceWith(aoDriveFrame(driveId)); return; }
+  }
+
+  var kind = holder.dataset.kind || (holder.tagName === "VIDEO" ? "Video" : "Photo");
+  var title = holder.dataset.title || "Media coming soon";
+  var note = holder.dataset.note || "";
+  var file = holder.dataset.file || holder.getAttribute("src") || "";
+
+  var div = document.createElement("div");
   div.className = "pending-media";
   div.innerHTML =
     '<span class="pm-kind">' + kind + " · not yet added</span>" +
@@ -161,44 +197,23 @@ function mediaPending(el) {
 }
 window.mediaPending = mediaPending;
 
-/* ---------------------------------------------------------------
-   Google Drive video helper.
+/* Manual Drive blocks: <div class="drive-video" data-id="..."></div> */
+function aoBuildDriveBlocks() {
+  document.querySelectorAll(".drive-video").forEach(function (el) {
+    var id = (el.dataset.id || "").trim();
+    if (!id || id === "PASTE_FILE_ID" || id === "PENDING") {
+      el.className = "pending-media";
+      el.innerHTML =
+        '<span class="pm-kind">Video · not yet added</span>' +
+        '<span class="pm-title">' + (el.dataset.title || "Drive video") + "</span>" +
+        '<span class="pm-file">Drive file ID not set</span>';
+      return;
+    }
+    el.replaceWith(aoDriveFrame(id));
+  });
+}
 
-   Instead of pasting a whole iframe, write:
-
-     <figure>
-       <div class="drive-video" data-id="PASTE_FILE_ID" data-len="6:40"></div>
-       <figcaption><span class="medialabel">Watch</span>Caption here.</figcaption>
-     </figure>
-
-   Leave data-id empty or set it to PENDING and the page shows the
-   normal "not yet added" placeholder instead of a broken frame.
-   --------------------------------------------------------------- */
-(function () {
-  function buildDriveVideos() {
-    document.querySelectorAll(".drive-video").forEach(function (el) {
-      if (el.dataset.built) return;
-      var id = (el.dataset.id || "").trim();
-
-      if (!id || id === "PASTE_FILE_ID" || id === "PENDING") {
-        el.className = "pending-media";
-        el.innerHTML =
-          '<span class="pm-kind">Video · not yet added</span>' +
-          '<span class="pm-title">' + (el.dataset.title || "Drive video") + "</span>" +
-          (el.dataset.note ? '<span class="pm-note">' + el.dataset.note + "</span>" : "") +
-          '<span class="pm-file">Drive file ID not set</span>';
-        el.dataset.built = "1";
-        return;
-      }
-
-      var wrap = document.createElement("div");
-      wrap.className = "driveframe";
-      wrap.innerHTML =
-        '<iframe src="https://drive.google.com/file/d/' + id + '/preview" ' +
-        'allow="autoplay" allowfullscreen loading="lazy"></iframe>';
-      el.replaceWith(wrap);
-    });
-  }
-  document.addEventListener("DOMContentLoaded", buildDriveVideos);
-  window.buildDriveVideos = buildDriveVideos;
-})();
+document.addEventListener("DOMContentLoaded", function () {
+  aoResolveDriveVideos();
+  aoBuildDriveBlocks();
+});
