@@ -62,3 +62,49 @@ const TRAINING_DAYS = [
   }
 
 ];
+
+
+/* ===========================================================
+   GOOGLE DRIVE VIDEO IDs
+
+   Paste the file ID between the quotes for each video.
+   Leave it empty and the page shows a "not yet added" panel.
+
+   To get an ID: in Drive, right-click the video, Share, Copy link.
+   You get something like
+
+     https://drive.google.com/file/d/1AbC2dEfG3hIjK4LmN5oPqR/view?usp=sharing
+                                    └───────── the ID ─────────┘
+
+   Copy only the part between /d/ and /view.
+   =========================================================== */
+
+const DRIVE_VIDEOS = {
+
+  // ----- Day 1 -----
+  "day1-ortho-language":      "1PtVcBM2Ouh6MSFnWz4_DlfIwvEZz2Hbc",
+
+  // ----- Day 2 -----
+  "day2-find-that-tooth":     "1YMPaqTnaofBR4BMvcd_nCn7nyIBYM2nD",
+  "day2-braces-anatomy":      "1PQVT5lR3OCkGR9yOcXRYp_3QXLWk0qSD",
+  "day2-aligner-anatomy":     "1VoIY784ADk-ZAQzwoRkMc9Qe9zOKWGsx",
+  "day2-braces-vs-aligners":  "19YFmPvflM1cCuGmhZffF-qjbUFOvCLUd",
+
+  // ----- Day 3 -----
+  "day3-adjustment-tray":     "",
+  "day3-which-instrument":    "",
+  "day3-four-appointments":   "",
+
+  // ----- Day 4 -----
+  "day4-ao-greeting":         "",
+  "day4-greeting-compare":    "",
+  "day4-ergonomics":          "",
+  "day4-bring-patient-to-you":"",
+
+  // ----- Day 5 -----
+  "day5-dolphin-tour":        "",
+  "day5-reading-notes":       "",
+  "day5-follow-an-instrument":"",
+  "day5-clean-dirty-gloves":  ""
+
+};
