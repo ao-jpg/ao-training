@@ -277,3 +277,39 @@ dl.terms dt:first-child{margin-top:0;}
 .script .q{font-family:var(--mono);font-size:10px;letter-spacing:.12em;text-transform:uppercase;
   color:var(--teal);display:block;margin-bottom:6px;}
 .script p{margin:0;font-family:var(--serif);font-size:17px;font-style:italic;color:var(--navy);}
+
+/* ---------- scenario blocks ---------- */
+.scenario{border:1px solid var(--rule);border-radius:6px;padding:0;margin-bottom:28px;overflow:hidden;}
+.scenario .schead{background:var(--navy);color:#fff;padding:13px 20px;}
+.scenario .schead .scn{font-family:var(--mono);font-size:10px;letter-spacing:.18em;
+  text-transform:uppercase;color:#A8BEDA;display:block;margin-bottom:3px;}
+.scenario .schead strong{font-family:var(--serif);font-size:19px;font-weight:500;}
+.scenario .scbody{padding:18px 20px 6px;}
+.scenario .setup{background:var(--wash);border-radius:4px;padding:13px 16px;margin-bottom:16px;font-size:14.5px;}
+.scenario .setup ul{margin:0;padding-left:18px;}
+.scenario .setup li{margin-bottom:3px;}
+details.qa{border-top:1px solid var(--rule);padding:14px 0 4px;}
+details.qa summary{
+  cursor:pointer;font-weight:600;color:var(--navy);font-size:15px;list-style:none;
+  display:flex;align-items:baseline;gap:10px;
+}
+details.qa summary::-webkit-details-marker{display:none;}
+details.qa summary::before{
+  content:"+";font-family:var(--mono);color:var(--teal);font-size:15px;width:14px;flex:0 0 14px;
+}
+details.qa[open] summary::before{content:"–";}
+details.qa summary:hover{color:var(--teal);}
+details.qa .ans{padding:12px 0 4px 24px;}
+details.qa .ans ul{margin-bottom:10px;}
+.modelnote{
+  border-left:3px solid var(--teal);background:var(--teal-soft);padding:14px 18px;margin:12px 0 4px;
+  font-size:14.5px;
+}
+.modelnote .q{font-family:var(--mono);font-size:9.5px;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--teal);display:block;margin-bottom:7px;}
+.banned{background:#FCF0F0;border-left:3px solid #A32020;padding:16px 20px;margin-bottom:20px;}
+.banned .calloutlabel{color:#A32020;}
+.banned ul{margin:0;padding-left:20px;columns:2;column-gap:28px;}
+.banned li{margin-bottom:4px;break-inside:avoid;}
+@media (max-width:600px){.banned ul{columns:1;}}
+.sitesimg{width:100%;border-radius:5px;display:block;background:var(--wash);border:1px solid var(--rule);}
