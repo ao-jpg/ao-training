@@ -54,11 +54,11 @@ const TRAINING_DAYS = [
 
   // ---------- STILL TO WRITE ----------
   {
-    n: 7, file: "day-07.html", date: "Fri, Sep 4",
-    title: "Beginning Active Adjustments",
-    blurb: "Week 2 clinical content. Not yet written.",
-    week: "Week 2 — Patient Care, Records & Practical",
-    ready: false
+    n: 7, file: "day-07.html", date: "Advanced",
+    title: "Documentation & the Treatment Card",
+    blurb: "Card setup, treatment notes, chart entries, next visit notes, tooth chart, GPS notes, and five practice scenarios.",
+    week: "Autonomy Track — for techs already working chairside",
+    ready: true
   }
 
 ];
@@ -105,6 +105,10 @@ const DRIVE_VIDEOS = {
   "day5-dolphin-tour":        "",
   "day5-reading-notes":       "",
   "day5-follow-an-instrument":"",
-  "day5-clean-dirty-gloves":  ""
+  "day5-clean-dirty-gloves":  "",
+
+  // ----- Documentation module -----
+  "tx-card-intro-comprehensive":     "1P5dc7vbwflB8sJ90adk3mtbAeZSV_e2q",
+  "tooth-chart-dentition-prescriptions": "1pNdqxmaKVi8ql0r-NJJxBSeCEr3IVHfJ"
 
 };
