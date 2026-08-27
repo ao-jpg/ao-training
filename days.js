@@ -59,6 +59,15 @@ const TRAINING_DAYS = [
     blurb: "Card setup, treatment notes, chart entries, next visit notes, tooth chart, GPS notes, and five practice scenarios.",
     week: "Autonomy Track — for techs already working chairside",
     ready: true
+  },
+
+  // ---------- HANDS-ON LESSONS ----------
+  {
+    n: 9, file: "lesson-03.html", date: "Lesson 3",
+    title: "Operatory Setup, Seating, Ergonomics & Typodont Mechanics",
+    blurb: "Three tray setups, the greeting and escort, the 30-Second Reset, and bench work on O-ties, steel ties, and power chain.",
+    week: "Hands-On Lessons",
+    ready: true
   }
 
 ];
@@ -109,6 +118,20 @@ const DRIVE_VIDEOS = {
 
   // ----- Documentation module -----
   "tx-card-intro-comprehensive":     "1P5dc7vbwflB8sJ90adk3mtbAeZSV_e2q",
-  "tooth-chart-dentition-prescriptions": "1pNdqxmaKVi8ql0r-NJJxBSeCEr3IVHfJ"
+  "tooth-chart-dentition-prescriptions": "1pNdqxmaKVi8ql0r-NJJxBSeCEr3IVHfJ",
+
+  // ----- Lesson 3 (Drive: Video - Open / Day 3) -----
+  "l3-adjustment-pack-setup":  "",   // Day 3 Adjustment pack Setup.mp4
+  "l3-idb-setup":              "",   // Day 3IDB SETUP final.mp4
+  "l3-bonding-setup":          "",   // Day 3 Setup for bonding FINAL.mp4
+  "l3-bringing-patient-back":  "",   // Day 3 Bringing patient back final.mp4
+  "l3-posture":                "",   // Day 3 Posture Final.mp4
+  "l3-finger-fulcrum":         "",   // day 3 Finger Fulcrum Final.mp4
+  "l3-otie-placement":         "",   // Day 3 Otie placement 720.mp4
+  "l3-removing-oties":         "",   // Day 3 Removing  Oties.mp4
+  "l3-steel-ties":             "",   // Day 3 Steel Ties.mp4
+  "l3-removing-steel-ties":    "",   // day 3 Removing Steel ties.mp4
+  "l3-placing-pc":             "",   // Day 3 Placing PC.mp4
+  "l3-removing-pc":            ""    // Day 3 Removing PC 720.mp4
 
 };
