@@ -121,17 +121,17 @@ const DRIVE_VIDEOS = {
   "tooth-chart-dentition-prescriptions": "1pNdqxmaKVi8ql0r-NJJxBSeCEr3IVHfJ",
 
   // ----- Lesson 3 (Drive: Video - Open / Day 3) -----
-  "l3-adjustment-pack-setup":  "",   // Day 3 Adjustment pack Setup.mp4
-  "l3-idb-setup":              "",   // Day 3IDB SETUP final.mp4
-  "l3-bonding-setup":          "",   // Day 3 Setup for bonding FINAL.mp4
-  "l3-bringing-patient-back":  "",   // Day 3 Bringing patient back final.mp4
-  "l3-posture":                "",   // Day 3 Posture Final.mp4
-  "l3-finger-fulcrum":         "",   // day 3 Finger Fulcrum Final.mp4
-  "l3-otie-placement":         "",   // Day 3 Otie placement 720.mp4
-  "l3-removing-oties":         "",   // Day 3 Removing  Oties.mp4
-  "l3-steel-ties":             "",   // Day 3 Steel Ties.mp4
-  "l3-removing-steel-ties":    "",   // day 3 Removing Steel ties.mp4
-  "l3-placing-pc":             "",   // Day 3 Placing PC.mp4
-  "l3-removing-pc":            ""    // Day 3 Removing PC 720.mp4
+  "l3-adjustment-pack-setup":  "1fSpCYN2vd9tolGfVY-kqfRh7XRy3kAa6",   // Day 3 Adjustment pack Setup.mp4
+  "l3-idb-setup":              "13_C0k26kDhJ-_4u8BLb2Amwe03-I7nr2",   // Day 3IDB SETUP final.mp4
+  "l3-bonding-setup":          "1Vg88hSWUX3SV-mOwnF44PR8UQ3vXy7ZL",   // Day 3 Setup for bonding FINAL.mp4
+  "l3-bringing-patient-back":  "1chziUc4X7q0XPOkrtm_XCYJ_ZmQwh5jQ",   // Day 3 Bringing patient back final.mp4
+  "l3-posture":                "1FtJahDjOw4RDliZgEymKlsCQI81biEwE",   // Day 3 Posture Final.mp4
+  "l3-finger-fulcrum":         "1_J9_4L6SzUVJI758bDdm-lRUE1AUjoay",   // day 3 Finger Fulcrum Final.mp4
+  "l3-otie-placement":         "1TnJ40lQq6eYFh6gkvlk8myNBCzIXkWwx",   // Day 3 Otie placement 720.mp4
+  "l3-removing-oties":         "1m5VADHz623Y7-FwEmVR_D1zN7QqYH66c",   // Day 3 Removing  Oties.mp4
+  "l3-steel-ties":             "1BODc4KB2rJiQpGXywlo7jvCEXMPEoo8P",   // Day 3 Steel Ties.mp4
+  "l3-removing-steel-ties":    "1OaZz0G8I8x2pCEGuyzGFM96Vo_LDKCa7",   // day 3 Removing Steel ties.mp4
+  "l3-placing-pc":             "1f2L_H4aziLdQ8LWJ-Adx6EkeuZX93PPX",   // Day 3 Placing PC.mp4
+  "l3-removing-pc":            "1d6yQIzyAh9yxOQHRasYnarB2L7GI0dJl"    // Day 3 Removing PC 720.mp4
 
 };
