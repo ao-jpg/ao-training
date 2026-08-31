@@ -1,0 +1,805 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Oral Hygiene Evaluation &amp; Documentation | AO Clinical Training</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/manual.css">
+<style>
+:root{
+  --ink:#101C30; --navy:#16294A; --spine:#0C1B32; --spine-2:#152A48;
+  --paper:#FFFFFF; --wash:#F4F6F9; --rule:#DCE2EA; --muted:#5A6879;
+  --teal:#0E6E76; --teal-soft:#EAF3F4; --amber:#9A5B00; --amber-bg:#FDF6EA;
+  --red:#A32020; --red-bg:#FCF0F0; --green:#2E7D32; --green-bg:#F0F7F0;
+  --sans:"IBM Plex Sans",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  --serif:"Newsreader",Georgia,serif;
+  --mono:"IBM Plex Mono",ui-monospace,monospace;
+}
+*{box-sizing:border-box;}
+body{margin:0;font-family:var(--sans);color:var(--ink);background:var(--wash);
+     font-size:16px;line-height:1.62;-webkit-font-smoothing:antialiased;}
+.masthead{background:var(--spine);color:#fff;border-bottom:3px solid var(--teal);
+  padding:14px 26px;display:flex;align-items:center;gap:16px;flex-wrap:wrap;}
+.masthead .ao{font-family:var(--serif);font-size:22px;font-weight:600;}
+.masthead .tag{font-family:var(--mono);font-size:9.5px;letter-spacing:.2em;text-transform:uppercase;
+  color:#8FA6C4;border-left:1px solid rgba(255,255,255,.2);padding-left:16px;}
+.masthead a.home{margin-left:auto;color:#8FA6C4;text-decoration:none;font-family:var(--mono);
+  font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;
+  border:1px solid rgba(255,255,255,.22);padding:7px 13px;border-radius:3px;}
+.masthead a.home:hover{color:#fff;border-color:rgba(255,255,255,.5);}
+.sheet{background:var(--paper);max-width:900px;margin:0 auto;min-height:100vh;
+  padding:44px 56px 90px;border-left:1px solid var(--rule);border-right:1px solid var(--rule);}
+.dayhead{border-bottom:1px solid var(--rule);padding-bottom:26px;margin-bottom:24px;}
+.daynum{font-family:var(--mono);font-size:11px;letter-spacing:.2em;text-transform:uppercase;
+  color:var(--teal);margin-bottom:10px;}
+h1{font-family:var(--serif);font-weight:500;font-size:40px;line-height:1.12;margin:0 0 8px;
+  letter-spacing:-.015em;color:var(--navy);}
+.dayfocus{font-family:var(--serif);font-style:italic;font-size:18px;color:var(--muted);margin:0;}
+h2{font-family:var(--serif);font-weight:500;font-size:26px;color:var(--navy);
+  margin:56px 0 6px;scroll-margin-top:14px;}
+h2 .h2num{font-family:var(--mono);font-size:12px;color:var(--teal);letter-spacing:.12em;
+  display:block;margin-bottom:8px;}
+h3{font-size:16.5px;font-weight:600;margin:32px 0 8px;color:var(--navy);}
+h4{font-size:14px;font-weight:600;margin:20px 0 6px;}
+p{margin:0 0 14px;} ul,ol{margin:0 0 16px;padding-left:22px;} li{margin-bottom:6px;}
+li::marker{color:var(--muted);}
+.lede{font-size:17.5px;line-height:1.55;color:#2B3B52;}
+hr.div{border:0;border-top:1px solid var(--rule);margin:44px 0;}
+.note,.watch,.safety{padding:16px 20px;margin:0 0 20px;font-size:15px;}
+.note{background:var(--wash);border-left:3px solid var(--navy);}
+.watch{background:var(--amber-bg);border-left:3px solid var(--amber);}
+.safety{background:var(--red-bg);border-left:3px solid var(--red);}
+.note p:last-child,.watch p:last-child,.safety p:last-child{margin-bottom:0;}
+.calloutlabel{font-family:var(--mono);font-size:9.5px;letter-spacing:.16em;text-transform:uppercase;
+  display:block;margin-bottom:7px;}
+.watch .calloutlabel{color:var(--amber);} .safety .calloutlabel{color:var(--red);}
+.note .calloutlabel{color:var(--navy);}
+
+.qnav{position:sticky;top:0;z-index:20;background:rgba(255,255,255,.96);
+  backdrop-filter:blur(6px);border-bottom:1px solid var(--rule);
+  margin:0 -56px 30px;padding:11px 56px;display:flex;gap:6px;flex-wrap:wrap;}
+.qnav a{font-family:var(--mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;
+  text-decoration:none;color:var(--muted);border:1px solid var(--rule);border-radius:3px;
+  padding:6px 10px;white-space:nowrap;}
+.qnav a:hover{color:#fff;background:var(--navy);border-color:var(--navy);}
+
+.workflow{display:grid;grid-template-columns:repeat(6,1fr);gap:6px;margin:0 0 30px;}
+.workflow div{background:var(--spine-2);color:#fff;border-radius:5px;padding:13px 6px;
+  text-align:center;font-family:var(--mono);font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;}
+.workflow div span{display:block;font-family:var(--sans);font-size:11px;letter-spacing:0;
+  text-transform:none;color:#9DB3D0;margin-top:5px;line-height:1.3;}
+
+figure{margin:0 0 26px;}
+figure img{width:100%;display:block;border:1px solid var(--rule);border-radius:6px;background:var(--wash);}
+figure video{width:100%;border-radius:6px;display:block;background:#000;}
+figcaption{font-size:13.5px;color:var(--muted);margin-top:9px;}
+.medialabel{font-family:var(--mono);font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--teal);display:block;margin-bottom:4px;}
+.driveframe{position:relative;width:100%;padding-bottom:56.25%;border-radius:6px;overflow:hidden;background:#000;}
+.driveframe iframe{position:absolute;inset:0;width:100%;height:100%;border:0;}
+.pending-media{display:flex;flex-direction:column;align-items:center;justify-content:center;
+  background:var(--wash);border:1px dashed var(--rule);border-radius:6px;min-height:180px;
+  padding:26px;text-align:center;}
+.pending-media .pm-kind{font-family:var(--mono);font-size:9.5px;letter-spacing:.18em;
+  text-transform:uppercase;color:var(--teal);margin-bottom:8px;}
+.pending-media .pm-title{font-family:var(--serif);font-size:18px;color:var(--navy);margin-bottom:6px;}
+.pending-media .pm-note{font-size:13px;color:var(--muted);max-width:420px;}
+.pending-media .pm-file{font-family:var(--mono);font-size:11px;color:var(--muted);margin-top:10px;}
+
+.zonewrap{border:1px solid var(--rule);border-radius:8px;overflow:hidden;margin-bottom:26px;background:#fff;}
+.zonewrap img{width:100%;display:block;border:0;border-radius:0;}
+.zonetabs{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--rule);}
+.zonetabs button{border:0;border-right:1px solid var(--rule);background:var(--wash);
+  padding:14px 8px;cursor:pointer;font-family:var(--sans);font-size:13px;color:var(--navy);
+  display:flex;flex-direction:column;align-items:center;gap:6px;transition:background .15s;}
+.zonetabs button:last-child{border-right:0;}
+.zonetabs button:hover{background:#E8EDF4;}
+.zonetabs button.on{background:var(--navy);color:#fff;}
+.zonetabs button b{font-family:var(--mono);font-size:15px;font-weight:500;
+  width:26px;height:26px;line-height:26px;border-radius:50%;
+  background:#fff;color:var(--navy);border:1px solid var(--rule);}
+.zonetabs button.on b{background:var(--teal);color:#fff;border-color:var(--teal);}
+.zonedetail{padding:20px 22px;border-top:1px solid var(--rule);background:var(--teal-soft);}
+.zonedetail h4{margin:0 0 8px;color:var(--navy);font-size:16px;}
+.zonedetail p{margin:0 0 10px;font-size:14.5px;}
+.zonedetail ul{margin:0;padding-left:20px;font-size:14.5px;}
+.zonedetail li{margin-bottom:4px;}
+
+.instrus{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-bottom:26px;}
+.instru{border:1px solid var(--rule);border-top:4px solid var(--teal);
+  border-radius:7px;padding:18px 20px;background:#fff;}
+.instru .inum{font-family:var(--mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--teal);margin-bottom:6px;}
+.instru h4{margin:0 0 4px;font-size:17px;color:var(--navy);font-family:var(--serif);font-weight:500;}
+.instru .role{font-size:13px;color:var(--muted);margin:0 0 12px;font-style:italic;}
+.instru ul{margin:0;padding-left:18px;font-size:14px;}
+.instru li{margin-bottom:5px;}
+
+.compare{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-bottom:28px;}
+.compare figure{margin:0;border:1px solid var(--rule);border-radius:7px;overflow:hidden;background:#fff;}
+.compare img{border:0;border-radius:0;}
+.compare .lab{font-family:var(--mono);font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;
+  padding:9px 14px;display:block;color:#fff;}
+.compare .lab.ok{background:var(--green);} .compare .lab.bad{background:var(--red);}
+.compare figcaption{padding:11px 14px;font-size:13.5px;color:var(--muted);margin:0;}
+
+.gradepick{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:18px;}
+.gradepick button{border:1px solid var(--rule);border-top-width:4px;border-radius:6px;
+  background:#fff;padding:16px 8px;cursor:pointer;font-family:var(--sans);
+  font-size:15px;font-weight:600;color:var(--navy);transition:all .15s;}
+.gradepick button:hover{transform:translateY(-2px);box-shadow:0 3px 10px rgba(16,28,48,.09);}
+.gradepick button[data-g=E]{border-top-color:var(--green);}
+.gradepick button[data-g=G]{border-top-color:var(--teal);}
+.gradepick button[data-g=F]{border-top-color:var(--amber);}
+.gradepick button[data-g=P]{border-top-color:var(--red);}
+.gradepick button.on{color:#fff;}
+.gradepick button[data-g=E].on{background:var(--green);border-color:var(--green);}
+.gradepick button[data-g=G].on{background:var(--teal);border-color:var(--teal);}
+.gradepick button[data-g=F].on{background:var(--amber);border-color:var(--amber);}
+.gradepick button[data-g=P].on{background:var(--red);border-color:var(--red);}
+.gradebody{border:1px solid var(--rule);border-radius:6px;padding:18px 22px;margin-bottom:26px;
+  min-height:80px;background:var(--wash);}
+.gradebody .empty{color:var(--muted);font-style:italic;margin:0;}
+.gradebody h4{margin:0 0 10px;font-size:17px;}
+.gradebody ul{margin:0;padding-left:20px;font-size:14.5px;}
+
+.builder{border:1px solid var(--navy);border-radius:8px;overflow:hidden;margin-bottom:28px;}
+.builder .bhead{background:var(--navy);color:#fff;padding:13px 20px;
+  font-family:var(--mono);font-size:10px;letter-spacing:.18em;text-transform:uppercase;}
+.builder .bbody{padding:20px 22px;background:#fff;}
+.bgroup{margin-bottom:18px;}
+label.gl{font-family:var(--mono);font-size:9.5px;letter-spacing:.16em;
+  text-transform:uppercase;color:var(--muted);display:block;margin-bottom:9px;}
+.chips{display:flex;flex-wrap:wrap;gap:7px;}
+.chips label{display:inline-flex;align-items:center;gap:7px;border:1px solid var(--rule);
+  border-radius:20px;padding:7px 14px;font-size:14px;cursor:pointer;background:#fff;transition:all .12s;}
+.chips label:hover{border-color:var(--teal);}
+.chips input{accent-color:var(--teal);margin:0;width:15px;height:15px;cursor:pointer;}
+.chips label.sel{background:var(--teal-soft);border-color:var(--teal);color:var(--navy);font-weight:500;}
+.noteout{background:var(--wash);border:1px solid var(--rule);border-radius:6px;
+  padding:16px 18px;font-size:15px;line-height:1.6;min-height:70px;
+  font-family:var(--serif);color:var(--navy);}
+.noteout.empty{font-style:italic;color:var(--muted);font-family:var(--sans);font-size:14px;}
+.brow{display:flex;gap:10px;align-items:center;margin-top:12px;flex-wrap:wrap;}
+.btn{border:1px solid var(--navy);background:var(--navy);color:#fff;border-radius:5px;
+  padding:10px 18px;font-family:var(--sans);font-size:14px;cursor:pointer;}
+.btn:hover{background:#1E3660;}
+.btn.ghost{background:#fff;color:var(--navy);}
+.btn.ghost:hover{background:var(--wash);}
+.copied{font-family:var(--mono);font-size:10px;letter-spacing:.12em;text-transform:uppercase;
+  color:var(--green);opacity:0;transition:opacity .2s;}
+.copied.show{opacity:1;}
+
+.escpick{display:grid;grid-template-columns:repeat(5,1fr);gap:8px;margin-bottom:18px;}
+.escpick button{border:1px solid var(--rule);border-radius:6px;background:#fff;cursor:pointer;
+  padding:13px 6px;font-family:var(--sans);font-size:12.5px;font-weight:600;color:var(--navy);
+  line-height:1.35;transition:all .15s;}
+.escpick button:hover{border-color:var(--red);}
+.escpick button.on{color:#fff;}
+.escpick button[data-e="1"].on{background:#B8901F;border-color:#B8901F;}
+.escpick button[data-e="2"].on{background:#D97706;border-color:#D97706;}
+.escpick button[data-e="3"].on{background:#B44A15;border-color:#B44A15;}
+.escpick button[data-e="4"].on{background:#A32020;border-color:#A32020;}
+.escpick button[data-e="5"].on{background:#0E6E76;border-color:#0E6E76;}
+.escbody{border:1px solid var(--rule);border-left:5px solid var(--rule);border-radius:6px;
+  padding:20px 22px;margin-bottom:26px;background:#fff;min-height:90px;}
+.escbody.e1{border-left-color:#B8901F;} .escbody.e2{border-left-color:#D97706;}
+.escbody.e3{border-left-color:#B44A15;}
+.escbody.e4{border-left-color:#A32020;background:var(--red-bg);}
+.escbody.e5{border-left-color:#0E6E76;background:var(--teal-soft);}
+.escbody h4{margin:0 0 10px;font-size:17px;color:var(--navy);}
+.escbody ul{font-size:14.5px;margin-bottom:14px;}
+.escbody .empty{color:var(--muted);font-style:italic;margin:0;}
+.modelnote{border-left:3px solid var(--teal);background:var(--teal-soft);padding:14px 18px;
+  margin:12px 0 0;font-size:14.5px;font-family:var(--serif);color:var(--navy);}
+.modelnote .q{font-family:var(--mono);font-size:9.5px;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--teal);display:block;margin-bottom:7px;}
+.escbody.e4 .modelnote,.escbody.e5 .modelnote{background:#fff;}
+
+.selfcheck{border:1px solid var(--navy);border-radius:7px;padding:8px 24px 20px;margin-bottom:26px;}
+.selfcheck h3{font-family:var(--mono);font-size:10px;letter-spacing:.18em;text-transform:uppercase;
+  color:var(--navy);font-weight:500;margin:18px 0 12px;}
+.selfcheck ol{margin:0;padding-left:20px;font-size:15px;}
+.checklist{border:1px solid var(--rule);border-radius:6px;padding:8px 22px 18px;margin:34px 0 0;}
+.checklist h3{font-family:var(--mono);font-size:10px;letter-spacing:.18em;text-transform:uppercase;
+  color:var(--muted);font-weight:500;margin:18px 0 12px;}
+.checklist label{display:flex;gap:12px;align-items:flex-start;padding:9px 0;
+  border-bottom:1px solid #EEF1F5;cursor:pointer;font-size:15px;}
+.checklist label:last-of-type{border-bottom:0;}
+.checklist input[type=checkbox]{width:19px;height:19px;margin:2px 0 0;accent-color:var(--teal);flex:0 0 auto;}
+.checklist input:checked + span{color:var(--muted);text-decoration:line-through;}
+.progressbar{height:5px;background:var(--rule);border-radius:3px;overflow:hidden;margin:14px 0 4px;}
+.progressbar div{height:100%;background:var(--teal);width:0;transition:width .25s;}
+.progresstext{font-family:var(--mono);font-size:10.5px;letter-spacing:.1em;color:var(--muted);
+  text-transform:uppercase;}
+.signoff{background:var(--wash);border:1px solid var(--rule);border-radius:6px;padding:22px 24px;margin-top:30px;}
+.signoff h3{margin-top:0;}
+.sigrow{display:flex;gap:28px;flex-wrap:wrap;margin-top:20px;}
+.sigfield{flex:1 1 200px;}
+.sigline{border-bottom:1px solid var(--ink);height:32px;}
+.siglabel{font-family:var(--mono);font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--muted);margin-top:6px;}
+
+@media (max-width:760px){
+  .sheet{padding:26px 20px 70px;border:0;}
+  .qnav{margin:0 -20px 24px;padding:10px 20px;}
+  h1{font-size:29px;} h2{font-size:22px;}
+  .workflow{grid-template-columns:repeat(3,1fr);}
+  .zonetabs{grid-template-columns:repeat(2,1fr);}
+  .zonetabs button{border-bottom:1px solid var(--rule);}
+  .compare,.instrus{grid-template-columns:1fr;}
+  .gradepick,.escpick{grid-template-columns:repeat(2,1fr);}
+  .masthead .tag{display:none;}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;}}
+@media print{.masthead,.qnav,.zonetabs,.gradepick,.escpick,.builder,.progressbar{display:none!important;}
+  .sheet{max-width:none;padding:0;border:0;} body{background:#fff;font-size:11pt;}}
+</style>
+</head>
+<body>
+<header class="masthead">
+  <span class="ao">Alexandria Orthodontics</span>
+  <span class="tag">Clinical Training Manual</span>
+  <a class="home" href="index.html">All lessons</a>
+</header>
+<div class="sheet" id="top">
+
+  <div class="dayhead">
+    <div class="daynum">Clinical Protocol</div>
+    <h1>Oral Hygiene Evaluation &amp; Documentation</h1>
+    <p class="dayfocus">Every patient. Every adjustment. Graded, documented, and escalated when it does not improve.</p>
+  </div>
+
+  <nav class="qnav">
+    <a href="#look">1 · Where to look</a>
+    <a href="#grade">2 · Grade it</a>
+    <a href="#document">3 · Document</a>
+    <a href="#tools">4 · The four tools</a>
+    <a href="#teach">5 · Teach</a>
+    <a href="#escalate">6 · Escalate</a>
+    <a href="#checkoff">7 · Check-off</a>
+  </nav>
+
+  <div class="safety">
+    <span class="calloutlabel">Not optional</span>
+    <p>Oral hygiene is evaluated at <strong>every</strong> orthodontic adjustment appointment, and documented every time — not only when it is poor. A blank OH box is an incomplete appointment.</p>
+  </div>
+
+  <div class="workflow">
+    <div>Look<span>Four areas</span></div>
+    <div>Grade<span>E / G / F / P</span></div>
+    <div>Show<span>Point to plaque</span></div>
+    <div>Teach<span>The right tool</span></div>
+    <div>Document<span>Box + note</span></div>
+    <div>Escalate<span>If it repeats</span></div>
+  </div>
+
+  <p class="lede">The goal is to protect the teeth and gums throughout treatment, and to create a clear record showing that hygiene was monitored and addressed. A conversation that never made it into the chart did not, as far as the record is concerned, happen.</p>
+
+  <figure>
+    <video controls preload="metadata" data-kind="Video" data-title="Spot, Rate, Approach, Document"
+           data-note="How to spot poor oral hygiene, rate it, approach the patient, and document it."
+           data-file="video/oh-check-summary.mp4">
+      <source src="video/oh-check-summary.mp4" type="video/mp4" onerror="mediaPending(this)">
+    </video>
+    <figcaption><span class="medialabel">Watch first</span>The complete oral hygiene check, start to finish. Watch this before working through the rest of the page.</figcaption>
+  </figure>
+
+  <h2 id="look"><span class="h2num">Step 1</span>Where to look</h2>
+
+  <p>Evaluate <strong>before removing the archwire</strong>. Do not glance at the front surfaces and move on. Tap each number to see what you are looking for, and which tool fixes it.</p>
+
+  <div class="zonewrap">
+    <img src="img/oh-where-to-look.png" alt="Intraoral photo annotated with the four areas to check for plaque"
+         data-kind="Photo" data-title="Where to Look for Plaque"
+         data-note="Annotated intraoral photo: under the archwire, around bracket borders, between teeth, along the gumline."
+         data-file="img/oh-where-to-look.png" onerror="mediaPending(this)">
+    <div class="zonetabs" id="zonetabs">
+      <button data-z="1" class="on"><b>1</b>Under archwire</button>
+      <button data-z="2"><b>2</b>Bracket borders</button>
+      <button data-z="3"><b>3</b>Between teeth</button>
+      <button data-z="4"><b>4</b>Gumline</button>
+    </div>
+    <div class="zonedetail" id="zonedetail"></div>
+  </div>
+
+  <div class="note">
+    <span class="calloutlabel">Then look again after the wire is out</span>
+    <p>The archwire hides plaque. Once removed, re-inspect beneath it, the enamel around the brackets, the interproximal spaces, and the gumline. <strong>Do not assign the final grade until this second look is done.</strong></p>
+  </div>
+
+  <h2 id="grade"><span class="h2num">Step 2</span>Assign a grade</h2>
+
+  <p>Grade the overall condition of the mouth, not one isolated spot. These two references anchor the ends of the scale.</p>
+
+  <div class="compare">
+    <figure>
+      <span class="lab ok">Healthy — clean</span>
+      <img src="img/oh-good.jpg" alt="Braces with clean brackets and healthy gingiva"
+           data-kind="Photo" data-title="Healthy reference" data-file="img/oh-good.jpg" onerror="mediaPending(this)">
+      <figcaption>Clean brackets, clear margins, healthy gingiva.</figcaption>
+    </figure>
+    <figure>
+      <span class="lab bad">Poor — generalized plaque</span>
+      <img src="img/oh-poor.jpg" alt="Braces with generalized plaque and inflamed gingiva"
+           data-kind="Photo" data-title="Poor reference" data-file="img/oh-poor.jpg" onerror="mediaPending(this)">
+      <figcaption>Generalized plaque with red, swollen, inflamed gingiva.</figcaption>
+    </figure>
+  </div>
+
+  <h3>The full grading scale</h3>
+  <figure>
+    <img src="img/oh-grading-scale.png" alt="Grading scale from Excellent to Poor with clinical photographs of each grade"
+         data-kind="Infographic" data-title="Rating Oral Hygiene: Excellent to Poor"
+         data-note="All four grades with front and lateral clinical photographs of each."
+         data-file="img/oh-grading-scale.png" onerror="mediaPending(this)">
+    <figcaption><span class="medialabel">Reference · keep on your phone</span>Front and lateral views of every grade. When you are stuck between two grades, compare against this rather than guessing.</figcaption>
+  </figure>
+
+  <p>Tap a grade to see its criteria. Your selection carries into the note builder below.</p>
+
+  <div class="gradepick" id="gradepick">
+    <button data-g="E">Excellent</button>
+    <button data-g="G">Good</button>
+    <button data-g="F">Fair</button>
+    <button data-g="P">Poor</button>
+  </div>
+  <div class="gradebody" id="gradebody"><p class="empty">Select a grade above to see what defines it.</p></div>
+
+  <h2 id="document"><span class="h2num">Step 3</span>Document it</h2>
+
+  <h3>Check the OH box in Dolphin — every appointment</h3>
+  <p>Select the column matching the condition: Excellent, Good, Fair, or Poor. Never leave it blank. The box gives the office a longitudinal record showing whether hygiene is improving, declining, or recurring as a problem. A verbal conversation without documentation does not create a reliable clinical record.</p>
+
+  <h3>Then write the note</h3>
+  <p>Checking the box alone is not enough when hygiene needs improvement. Build the note below, then copy it into Dolphin.</p>
+
+  <div class="builder">
+    <div class="bhead">Treatment note builder</div>
+    <div class="bbody">
+
+      <div class="bgroup">
+        <label class="gl">Grade</label>
+        <div class="chips" id="bgrade">
+          <label><input type="radio" name="bg" value="Excellent"><span>Excellent</span></label>
+          <label><input type="radio" name="bg" value="Good"><span>Good</span></label>
+          <label><input type="radio" name="bg" value="Fair"><span>Fair</span></label>
+          <label><input type="radio" name="bg" value="Poor"><span>Poor</span></label>
+        </div>
+      </div>
+
+      <div class="bgroup">
+        <label class="gl">Where plaque was seen</label>
+        <div class="chips" id="bloc">
+          <label><input type="checkbox" value="beneath the archwire"><span>Under archwire</span></label>
+          <label><input type="checkbox" value="around brackets"><span>Bracket borders</span></label>
+          <label><input type="checkbox" value="interproximally"><span>Between teeth</span></label>
+          <label><input type="checkbox" value="along the gingival margins"><span>Gumline</span></label>
+          <label><input type="checkbox" value="with food debris present"><span>Food debris</span></label>
+          <label><input type="checkbox" value="with gingival inflammation noted"><span>Gingival inflammation</span></label>
+          <label><input type="checkbox" value="with beginning white spot lesions"><span>White spot lesions</span></label>
+        </div>
+      </div>
+
+      <div class="bgroup">
+        <label class="gl">Who was informed</label>
+        <div class="chips" id="bwho">
+          <label><input type="radio" name="bw" value="patient"><span>Patient</span></label>
+          <label><input type="radio" name="bw" value="patient and parent"><span>Patient + parent</span></label>
+        </div>
+      </div>
+
+      <div class="bgroup">
+        <label class="gl">What was done</label>
+        <div class="chips" id="bact">
+          <label><input type="checkbox" value="Reviewed brushing technique"><span>Reviewed brushing</span></label>
+          <label><input type="checkbox" value="reinforced daily flossing"><span>Reinforced flossing</span></label>
+          <label><input type="checkbox" value="demonstrated brushing above and below brackets"><span>Demonstrated technique</span></label>
+          <label><input type="checkbox" value="reviewed use of the Proxibrush"><span>Proxibrush</span></label>
+          <label><input type="checkbox" value="reviewed use of the floss threader"><span>Floss threader</span></label>
+          <label><input type="checkbox" value="reviewed use of the water flosser"><span>Water flosser</span></label>
+          <label><input type="checkbox" value="patient demonstrated technique back"><span>Patient showed back</span></label>
+          <label><input type="checkbox" value="intraoral photographs obtained"><span>Photos taken</span></label>
+          <label><input type="checkbox" value="general dentist notified"><span>Dentist notified</span></label>
+          <label><input type="checkbox" value="archwires removed for hygiene access"><span>Wires removed</span></label>
+          <label><input type="checkbox" value="doctor informed"><span>Doctor informed</span></label>
+        </div>
+      </div>
+
+      <label class="gl">Generated note</label>
+      <div class="noteout empty" id="noteout">Choose a grade to begin.</div>
+      <div class="brow">
+        <button class="btn" id="copybtn">Copy note</button>
+        <button class="btn ghost" id="resetbtn">Reset</button>
+        <span class="copied" id="copied">Copied</span>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="safety">
+    <span class="calloutlabel">Not acceptable</span>
+    <p><strong>"OH poor."</strong> and nothing else. That records the problem but shows nothing was done about it.</p>
+  </div>
+
+  <h2 id="tools"><span class="h2num">Step 4</span>The four tools</h2>
+
+  <p class="lede">Brushing alone is not enough with braces. Each tool cleans an area that is easy to miss, and the biggest mistake patients make is brushing straight across the front of the braces — which cleans the brackets themselves while leaving plaque underneath the wire, around the bracket edges, and along the gumline.</p>
+
+  <figure>
+    <video controls preload="metadata" data-kind="Video" data-title="The Four Oral Hygiene Instruments"
+           data-note="What each tool is and how to demonstrate it to a patient."
+           data-file="video/oh-four-instruments.mp4">
+      <source src="video/oh-four-instruments.mp4" type="video/mp4" onerror="mediaPending(this)">
+    </video>
+    <figcaption><span class="medialabel">Watch</span>All four tools and how to demonstrate each one chairside.</figcaption>
+  </figure>
+
+  <div class="instrus">
+
+    <div class="instru">
+      <div class="inum">Tool 1 · Main cleaning</div>
+      <h4>Electric toothbrush</h4>
+      <p class="role">Cleans: brackets, above and below them, under the archwire, the gumline, and the inside and chewing surfaces</p>
+      <p style="font-size:13.5px;margin:0 0 8px;"><strong>Three angles, in order:</strong></p>
+      <ul>
+        <li>About <strong>45 degrees toward the gumline</strong>. Move slowly tooth to tooth, letting the bristles clean where the tooth meets the gums.</li>
+        <li>About <strong>45 degrees downward from above</strong> the brackets, so the bristles reach the upper edge of each bracket.</li>
+        <li>About <strong>45 degrees upward from underneath</strong> the brackets and archwire, so the bristles reach beneath the wire and the lower bracket edges.</li>
+        <li>Then the inside and chewing surfaces normally.</li>
+        <li>Spend time on <strong>each individual tooth</strong> rather than sweeping rapidly across the arch.</li>
+      </ul>
+      <p style="font-size:13.5px;margin:10px 0 0;color:#0E6E76;"><strong>Teaching point:</strong> don't just brush across the braces. Brush above them, below them, and along the gumline.</p>
+    </div>
+
+    <div class="instru">
+      <div class="inum">Tool 2 · Around the braces</div>
+      <h4>Proxibrush</h4>
+      <p class="role">Cleans: under the archwire, between adjacent brackets, bracket sides, between teeth where space permits, and around hooks and attachments</p>
+      <ul>
+        <li>Gently insert the small brush <strong>underneath the archwire between two brackets</strong>.</li>
+        <li>Move it gently in and out to clean the tooth surface and the sides of the neighboring brackets.</li>
+        <li>Angle it around the upper and lower borders of the brackets for the hardest-to-reach plaque.</li>
+        <li>Work systematically from one side of the mouth to the other.</li>
+        <li><strong>Do not force it</strong> into a space where it does not fit.</li>
+      </ul>
+      <p style="font-size:13.5px;margin:10px 0 0;color:#0E6E76;"><strong>Teaching point:</strong> the Proxibrush cleans the small spaces around and underneath the braces that the toothbrush may miss. Excellent for food the patient can actually see caught in the braces.</p>
+    </div>
+
+    <div class="instru">
+      <div class="inum">Tool 3 · Between the teeth</div>
+      <h4>Floss threader</h4>
+      <p class="role">Cleans: between neighboring teeth, below the contact points, along the sides of each tooth, and just beneath the gumline</p>
+      <ul>
+        <li>Place dental floss through the loop of the threader.</li>
+        <li>Guide the <strong>stiff end underneath the archwire</strong>.</li>
+        <li>Pull the floss through until there is enough to work with.</li>
+        <li>Slide the floss gently between the two teeth.</li>
+        <li>Wrap it around one tooth in a <strong>C shape</strong>, move up and down along the surface and slightly under the gumline. Then do the neighboring tooth.</li>
+        <li>Remove and repeat under the archwire at the next contact.</li>
+      </ul>
+      <p style="font-size:13.5px;margin:10px 0 0;color:#0E6E76;"><strong>Teaching point:</strong> neither the toothbrush nor the Proxibrush fully cleans the tight contact between two teeth. Plaque left there contributes to gingival inflammation and decay.</p>
+    </div>
+
+    <div class="instru">
+      <div class="inum">Tool 4 · Flush difficult areas</div>
+      <h4>Water flosser</h4>
+      <p class="role">Cleans: around brackets, under the archwire, between brackets, around hooks and auxiliaries, along the gumline, and between teeth</p>
+      <ul>
+        <li>Fill the reservoir and select a pressure setting. New users should <strong>start low</strong> and increase as they get used to it.</li>
+        <li>Lean over the sink and <strong>put the tip in the mouth before turning it on</strong>.</li>
+        <li>Aim toward the gumline and around the brackets, following the gumline slowly tooth to tooth.</li>
+        <li>Pause between teeth and direct the water around each bracket, under the wire, and into food traps.</li>
+        <li>Work systematically around both arches.</li>
+      </ul>
+      <p style="font-size:13.5px;margin:10px 0 0;color:#0E6E76;"><strong>Teaching point:</strong> spraying water over the braces does not mean everything is clean. Careful brushing and interdental cleaning are still required.</p>
+    </div>
+
+  </div>
+
+  <h3>How the four work together</h3>
+  <table style="width:100%;border-collapse:collapse;margin-bottom:22px;font-size:14.5px;">
+    <tr><th style="text-align:left;padding:11px 12px;border-bottom:1px solid #16294A;font-family:var(--mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:#5A6879;font-weight:500;">Tool</th><th style="text-align:left;padding:11px 12px;border-bottom:1px solid #16294A;font-family:var(--mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:#5A6879;font-weight:500;">Its job</th></tr>
+    <tr><td style="padding:11px 12px;border-bottom:1px solid #DCE2EA;"><strong>Electric toothbrush</strong></td><td style="padding:11px 12px;border-bottom:1px solid #DCE2EA;">Main cleaning — teeth, brackets, under the wire, gumline.</td></tr>
+    <tr><td style="padding:11px 12px;border-bottom:1px solid #DCE2EA;"><strong>Proxibrush</strong></td><td style="padding:11px 12px;border-bottom:1px solid #DCE2EA;">Around the braces — the small spaces under the wire and between brackets.</td></tr>
+    <tr><td style="padding:11px 12px;border-bottom:1px solid #DCE2EA;"><strong>Floss threader</strong></td><td style="padding:11px 12px;border-bottom:1px solid #DCE2EA;">Between the teeth — gets floss under the archwire to the tight contacts.</td></tr>
+    <tr><td style="padding:11px 12px;border-bottom:1px solid #DCE2EA;"><strong>Water flosser</strong></td><td style="padding:11px 12px;border-bottom:1px solid #DCE2EA;">Flush difficult areas — around braces, between teeth, along the gumline.</td></tr>
+  </table>
+
+  <h3>The sequence to give patients</h3>
+  <div class="workflow" style="grid-template-columns:repeat(4,1fr);">
+    <div>1 · Brush<span>Above → below → gumline → inside and chewing</span></div>
+    <div>2 · Proxibrush<span>Under the wire, between brackets</span></div>
+    <div>3 · Floss<span>Threader, then between the teeth</span></div>
+    <div>4 · Water floss<span>Flush around braces and gumline</span></div>
+  </div>
+
+  <div class="note">
+    <span class="calloutlabel">The one line to say out loud</span>
+    <p style="font-family:var(--serif);font-size:17px;font-style:italic;color:var(--navy);">"Brushing alone isn't enough with braces. Each tool cleans an area that is easy to miss."</p>
+  </div>
+
+  <div class="note">
+    <span class="calloutlabel">How to use this at the chair</span>
+    <p>Do not run through all four every time. Name the area where you actually found plaque, then hand the patient the one tool that fixes it. One specific instruction gets followed. Four general ones do not.</p>
+  </div>
+
+  <h2 id="teach"><span class="h2num">Step 5</span>Teach the patient</h2>
+
+  <p>Show the patient exactly where the problem is. Pointing at it in a mirror beats any amount of general advice. Do not just say "you need to brush better."</p>
+
+  <ul>
+    <li>Brush at roughly a 45-degree angle <strong>underneath</strong> the brackets and archwire, in small circular motions.</li>
+    <li>Brush at roughly a 45-degree angle from <strong>above</strong> the brackets.</li>
+    <li>Work around the complete border of each bracket, not straight across.</li>
+    <li>Brush directly along the gumline.</li>
+    <li>Do not skip the inside and biting surfaces.</li>
+    <li>Reinforce flossing between the teeth using the floss threader.</li>
+  </ul>
+
+  <div class="watch">
+    <span class="calloutlabel">Why patients avoid the gumline</span>
+    <p>Inflamed gums are uncomfortable and bleed when brushed, so patients start avoiding the area, which leaves more plaque, which worsens the inflammation. Explain that cycle to them. Consistent gentle cleaning is what makes the gums healthier and stops the bleeding.</p>
+  </div>
+
+  <div class="note">
+    <span class="calloutlabel">Have them show you</span>
+    <p>When possible, hand the patient a brush and have them demonstrate back to you. Watching them do it tells you far more than asking whether they understood.</p>
+  </div>
+
+  <h2 id="escalate"><span class="h2num">Step 6</span>Persistent poor hygiene</h2>
+
+  <p class="lede">Poor hygiene is not documented over and over at the same level of response. Each repeat appointment escalates. Tap the appointment you are on.</p>
+
+  <div class="escpick" id="escpick">
+    <button data-e="1">Appt 1<br>First poor</button>
+    <button data-e="2">Appt 2<br>Poor again</button>
+    <button data-e="3">Appt 3<br>Poor again</button>
+    <button data-e="4">Appt 4<br>Poor again</button>
+    <button data-e="5">1–2 wk<br>Follow-up</button>
+  </div>
+  <div class="escbody" id="escbody"><p class="empty">Select which appointment you are on to see the required actions.</p></div>
+
+  <figure>
+    <img src="img/oh-escalation-protocol.png" alt="Persistent poor oral hygiene protocol, five stages"
+         data-kind="Infographic" data-title="Persistent Poor Oral Hygiene Protocol"
+         data-note="The full escalation path from the first poor visit through the 1–2 week follow-up."
+         data-file="img/oh-escalation-protocol.png" onerror="mediaPending(this)">
+    <figcaption><span class="medialabel">Reference · print for sterilization</span>The whole ladder on one page.</figcaption>
+  </figure>
+
+  <div class="safety">
+    <span class="calloutlabel">Where the decision leaves you</span>
+    <p>Removing wires, pausing mechanics, and removing braces are <strong>the doctor's decisions</strong>. Your job is to recognize the problem early, document it clearly, educate the patient, and make sure the doctor knows when it continues.</p>
+  </div>
+
+  <h2 id="checkoff"><span class="h2num">Step 7</span>Before you leave the chair</h2>
+
+  <div class="selfcheck">
+    <h3>Ask yourself, every appointment</h3>
+    <ol>
+      <li>Did I grade the OH?</li>
+      <li>Did I check the correct box in Dolphin?</li>
+      <li>Did I document what I saw?</li>
+      <li>Did I document who was informed?</li>
+      <li>Did I document what instructions were given?</li>
+      <li>If this is recurring poor OH, did I follow the escalation protocol?</li>
+    </ol>
+  </div>
+
+  <p>Documentation is not an administrative afterthought, it is part of treatment. If you observe poor hygiene and fail to document it, the record does not show that the problem was ever recognized or addressed.</p>
+
+  <div class="checklist" data-day="11">
+    <h3>Protocol check-off</h3>
+    <label><input type="checkbox" id="oh1"><span>Evaluate hygiene before removing the archwire, checking all four areas.</span></label>
+    <label><input type="checkbox" id="oh2"><span>Re-inspect after the archwire is removed, before grading.</span></label>
+    <label><input type="checkbox" id="oh3"><span>Assign a grade and justify it against the grading scale.</span></label>
+    <label><input type="checkbox" id="oh4"><span>Check the correct OH box in Dolphin.</span></label>
+    <label><input type="checkbox" id="oh5"><span>Write a note stating condition, locations, and what was reviewed with whom.</span></label>
+    <label><input type="checkbox" id="oh6"><span>Name all four tools and the area each one cleans.</span></label>
+    <label><input type="checkbox" id="oh7"><span>Demonstrate the Proxibrush under the archwire between two brackets on a typodont.</span></label>
+    <label><input type="checkbox" id="oh8"><span>Demonstrate threading floss under the archwire and the C-shape wrap.</span></label>
+    <label><input type="checkbox" id="oh9"><span>State the three toothbrush angles in order.</span></label>
+    <label><input type="checkbox" id="oh9b"><span>Have the patient demonstrate the technique back.</span></label>
+    <label><input type="checkbox" id="oh10"><span>State the escalation protocol through the 1–2 week follow-up from memory.</span></label>
+    <div class="progressbar"><div></div></div>
+    <div class="progresstext"></div>
+  </div>
+
+  <div class="signoff">
+    <h3>Sign-off</h3>
+    <p>Grade three live patients alongside your trainer and compare answers before entering anything. Consistency between techs is what makes the longitudinal record worth having.</p>
+    <div class="sigrow">
+      <div class="sigfield"><div class="sigline"></div><div class="siglabel">Trainee</div></div>
+      <div class="sigfield"><div class="sigline"></div><div class="siglabel">Clinical instructor</div></div>
+      <div class="sigfield"><div class="sigline"></div><div class="siglabel">Date</div></div>
+    </div>
+  </div>
+
+  <nav class="pager" data-day="11"></nav>
+</div>
+
+<script src="days.js"></script>
+<script src="assets/manual.js"></script>
+<script>
+(function(){
+  "use strict";
+
+  var ZONES = {
+    "1": { t:"Under the archwire",
+      p:"Patients brush straight across the braces from side to side. That cleans the outside of the brackets and misses everything beneath the wire.",
+      l:["Follow the wire tooth to tooth, not just across the front",
+         "Is plaque sitting underneath the archwire?",
+         "Is food debris trapped between the wire and the tooth?",
+         "Where is the buildup heaviest?",
+         "<strong>Tools that fix it: Proxibrush, and the toothbrush angled 45 degrees upward from underneath</strong>"] },
+    "2": { t:"Around the bracket borders",
+      p:"A bracket can look perfectly clean in the center while plaque is packed all the way around its border. This is the classic result of horizontal-only brushing.",
+      l:["Above the bracket","Below the bracket","Mesial and distal sides",
+         "The corners around the bracket base",
+         "<strong>Tool that fixes it: electric toothbrush at 45 degrees, above and below each bracket</strong>"] },
+    "3": { t:"Between the teeth",
+      p:"Do not assume a clean-looking front surface means the patient is flossing. Ask when appropriate.",
+      l:["Visible plaque between teeth","Food debris","Inflamed papillae",
+         "Areas where flossing is clearly being missed",
+         "<strong>Tool that fixes it: floss threader with floss</strong>"] },
+    "4": { t:"Along the gumline",
+      p:"Frequently missed, and the area that tells you the most about how long the problem has been going on.",
+      l:["Plaque at the gingival margin","Redness","Puffiness or swelling","Bleeding",
+         "Food debris near the gums",
+         "<strong>Tools that fix it: electric toothbrush at 45 degrees toward the gumline, and water flosser</strong>"] }
+  };
+  var zd = document.getElementById("zonedetail");
+  function showZone(z){
+    var d = ZONES[z];
+    zd.innerHTML = "<h4>" + z + ". " + d.t + "</h4><p>" + d.p + "</p><ul><li>" + d.l.join("</li><li>") + "</li></ul>";
+    Array.prototype.forEach.call(document.querySelectorAll("#zonetabs button"), function(b){
+      b.classList.toggle("on", b.dataset.z === z);
+    });
+  }
+  document.getElementById("zonetabs").addEventListener("click", function(e){
+    var b = e.target.closest("button"); if (b) showZone(b.dataset.z);
+  });
+  showZone("1");
+
+  var GRADES = {
+    E:{n:"Excellent", l:["Little to no visible plaque","Brackets clean, area beneath the archwire clean","Gumline clean, interproximal areas clean","Gums healthy with minimal or no inflammation"]},
+    G:{n:"Good", l:["Small localized areas of plaque","Minor buildup around one or a few brackets","Small areas missed along the wire or gumline","Acceptable overall, but could be improved"]},
+    F:{n:"Fair", l:["Noticeable plaque around several brackets","Plaque beneath the archwire and along the gumline","Plaque or debris between teeth, evidence of inadequate flossing","Mild to moderate gingival inflammation"]},
+    P:{n:"Poor", l:["Generalized plaque accumulation","Heavy plaque around multiple brackets and beneath the archwire","Significant plaque along the gumline, food debris, poor interproximal cleaning","Red, swollen, or bleeding gingiva","Evidence that home care is consistently inadequate"]}
+  };
+  var gb = document.getElementById("gradebody");
+  document.getElementById("gradepick").addEventListener("click", function(e){
+    var b = e.target.closest("button"); if (!b) return;
+    var g = GRADES[b.dataset.g];
+    gb.innerHTML = "<h4>" + g.n + "</h4><ul><li>" + g.l.join("</li><li>") + "</li></ul>";
+    Array.prototype.forEach.call(this.querySelectorAll("button"), function(x){
+      x.classList.toggle("on", x === b);
+    });
+    var r = document.querySelector('#bgrade input[value="' + g.n + '"]');
+    if (r) { r.checked = true; syncChips(); build(); }
+  });
+
+  function vals(id){
+    return Array.prototype.slice.call(document.querySelectorAll("#" + id + " input:checked"))
+                .map(function(i){ return i.value; });
+  }
+  function joinList(a){
+    if (a.length === 0) return "";
+    if (a.length === 1) return a[0];
+    return a.slice(0,-1).join(", ") + ", and " + a[a.length-1];
+  }
+  function cap(s){ return s.charAt(0).toUpperCase() + s.slice(1); }
+
+  var out = document.getElementById("noteout");
+  function build(){
+    var grade = vals("bgrade")[0];
+    if (!grade) { out.className = "noteout empty"; out.textContent = "Choose a grade to begin."; return; }
+    var locs = vals("bloc"), who = vals("bwho")[0], acts = vals("bact");
+    var s = "OH " + grade.toLowerCase() + ".";
+    if (locs.length) {
+      var flags = locs.filter(function(l){ return l.indexOf("with ") === 0; })
+                      .map(function(l){ return l.slice(5); });
+      var places = locs.filter(function(l){ return l.indexOf("with ") !== 0; });
+      if (places.length) s += " Plaque noted " + joinList(places) + ".";
+      flags.forEach(function(f){ s += " " + cap(f) + "."; });
+    }
+    if (acts.length) {
+      var lead = acts[0], rest = acts.slice(1);
+      var phrase = lead + (rest.length ? ", " + joinList(rest) : "");
+      s += " " + cap(phrase);
+      if (who) s += " with " + who;
+      s += ".";
+    } else if (who) {
+      s += " Oral hygiene reviewed with " + who + ".";
+    }
+    out.className = "noteout";
+    out.textContent = s;
+  }
+
+  function syncChips(){
+    Array.prototype.forEach.call(document.querySelectorAll(".chips label"), function(l){
+      var i = l.querySelector("input");
+      l.classList.toggle("sel", i && i.checked);
+    });
+  }
+
+  document.querySelector(".builder").addEventListener("change", function(){ syncChips(); build(); });
+
+  document.getElementById("copybtn").addEventListener("click", function(){
+    var t = out.textContent;
+    if (out.classList.contains("empty")) return;
+    var done = function(){
+      var c = document.getElementById("copied");
+      c.classList.add("show");
+      setTimeout(function(){ c.classList.remove("show"); }, 1600);
+    };
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(t).then(done, function(){});
+    } else {
+      var ta = document.createElement("textarea");
+      ta.value = t; document.body.appendChild(ta); ta.select();
+      try { document.execCommand("copy"); done(); } catch(e){}
+      document.body.removeChild(ta);
+    }
+  });
+
+  document.getElementById("resetbtn").addEventListener("click", function(){
+    Array.prototype.forEach.call(document.querySelectorAll(".builder input"), function(i){ i.checked = false; });
+    Array.prototype.forEach.call(document.querySelectorAll("#gradepick button"), function(b){ b.classList.remove("on"); });
+    gb.innerHTML = '<p class="empty">Select a grade above to see what defines it.</p>';
+    syncChips(); build();
+  });
+
+  var ESC = {
+    "1":{c:"e1",h:"Appointment 1 — first poor OH visit",
+      l:["Discuss oral hygiene status with the patient <strong>and parent</strong>.",
+         "Review brushing around brackets, under the archwire, along the gumline, and flossing.",
+         "Give practical tips for keeping the area clean, and hand over the specific tool for the area where you found plaque.",
+         "Document OH in Dolphin and note the discussion."],
+      n:"OH poor. Significant plaque noted around brackets, beneath archwire, between teeth, and along gumline. Reviewed brushing and flossing techniques with patient and parent. Discussed importance of improving oral hygiene during orthodontic treatment."},
+    "2":{c:"e2",h:"Appointment 2 — poor again",
+      l:["<strong>Take a clinical photo</strong> documenting the poor oral hygiene.",
+         "Review the photo with the patient and parent. Showing them works far better than telling them.",
+         "Reinforce oral hygiene instructions.",
+         "Document OH and the counseling."],
+      n:"OH remains poor. Intraoral photographs obtained today documenting persistent plaque around brackets, beneath the archwire, interproximally, and along the gingival margins. Photos reviewed with patient and parent. Oral hygiene instructions reinforced and brushing/flossing technique reviewed again."},
+    "3":{c:"e3",h:"Appointment 3 — poor again",
+      l:["Discuss the ongoing issue with the patient's <strong>general dentist</strong>.",
+         "Ask the dentist to reinforce brushing, flossing, and preventive care.",
+         "Continue counseling the patient and parent.",
+         "Document OH and the communication with the dentist."],
+      n:"OH continues to be poor despite repeated instruction. Persistent generalized plaque and gingival inflammation noted. Patient and parent counseled again. General dentist notified regarding continued oral hygiene concerns and asked to reinforce home care and preventive dental care."},
+    "4":{c:"e4",h:"Appointment 4 — poor again",
+      l:["<strong>Remove the wires</strong> for better hygiene access.",
+         "Take a clinical photo.",
+         "Have the patient return in <strong>1 to 2 weeks</strong>.",
+         "Document OH and all actions taken."],
+      n:"OH remains poor despite repeated counseling and dentist involvement. Archwires removed today to improve hygiene access. Intraoral photographs obtained. Patient scheduled to return in 1–2 weeks for oral hygiene recheck. Reviewed with patient and parent."},
+    "5":{c:"e5",h:"1–2 week follow-up",
+      l:["<strong>Recheck oral hygiene.</strong>",
+         "If oral hygiene has improved, treatment may continue.",
+         "If it has not improved, or if <strong>white spot lesions or cavities</strong> begin to appear, the orthodontist may decide to remove the braces completely.",
+         "Document the recheck findings and the decision."],
+      n:"1–2 week OH recheck. [Improved / not improved]. [White spot lesions noted / none]. Findings reviewed with patient and parent. Doctor informed. Plan: [resume treatment / wires remain out / doctor evaluating debond]."}
+  };
+  var eb = document.getElementById("escbody");
+  document.getElementById("escpick").addEventListener("click", function(e){
+    var b = e.target.closest("button"); if (!b) return;
+    var d = ESC[b.dataset.e];
+    eb.className = "escbody " + d.c;
+    eb.innerHTML = "<h4>" + d.h + "</h4><ul><li>" + d.l.join("</li><li>") + "</li></ul>" +
+                   '<div class="modelnote"><span class="q">Example note</span>' + d.n + "</div>";
+    Array.prototype.forEach.call(this.querySelectorAll("button"), function(x){
+      x.classList.toggle("on", x === b);
+    });
+  });
+
+  syncChips();
+})();
+</script>
+</body>
+</html>

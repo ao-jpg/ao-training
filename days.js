@@ -151,6 +151,7 @@ const DRIVE_VIDEOS = {
   "l3-removing-pc":            "1d6yQIzyAh9yxOQHRasYnarB2L7GI0dJl",   // Day 3 Removing PC 720.mp4
 
   // ----- Clinical protocols -----
-  "oh-check-summary":          ""
+  "oh-check-summary":          "",
+  "oh-four-instruments":       ""
 
 };
