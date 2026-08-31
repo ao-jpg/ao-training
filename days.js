@@ -68,6 +68,22 @@ const TRAINING_DAYS = [
     blurb: "Three tray setups, the greeting and escort, the 30-Second Reset, and bench work on O-ties, steel ties, and power chain.",
     week: "Hands-On Lessons",
     ready: true
+  },
+
+  // ---------- CLINICAL PROTOCOLS ----------
+  {
+    n: 11, file: "oral-hygiene.html", date: "Protocol",
+    title: "Oral Hygiene Evaluation & Documentation",
+    blurb: "Where to look, how to grade, what to write in Dolphin, and the escalation ladder for persistent poor hygiene.",
+    week: "Clinical Protocols",
+    ready: true
+  },
+  {
+    n: 12, file: "wire-progression.html", date: "Protocol",
+    title: "Wire Progression — 24-Month Nonextraction",
+    blurb: "Interactive flowchart of the nine-step pathway, both decision points, core rules, and the full appointment breakdown for each step.",
+    week: "Clinical Protocols",
+    ready: true
   }
 
 ];
@@ -132,6 +148,9 @@ const DRIVE_VIDEOS = {
   "l3-steel-ties":             "1BODc4KB2rJiQpGXywlo7jvCEXMPEoo8P",   // Day 3 Steel Ties.mp4
   "l3-removing-steel-ties":    "1OaZz0G8I8x2pCEGuyzGFM96Vo_LDKCa7",   // day 3 Removing Steel ties.mp4
   "l3-placing-pc":             "1f2L_H4aziLdQ8LWJ-Adx6EkeuZX93PPX",   // Day 3 Placing PC.mp4
-  "l3-removing-pc":            "1d6yQIzyAh9yxOQHRasYnarB2L7GI0dJl"    // Day 3 Removing PC 720.mp4
+  "l3-removing-pc":            "1d6yQIzyAh9yxOQHRasYnarB2L7GI0dJl",   // Day 3 Removing PC 720.mp4
+
+  // ----- Clinical protocols -----
+  "oh-check-summary":          ""
 
 };
