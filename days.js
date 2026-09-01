@@ -152,6 +152,9 @@ const DRIVE_VIDEOS = {
 
   // ----- Clinical protocols -----
   "oh-check-summary":          "1y7-dvXrv2bJM9tJqcNS8jDFAH56ePsFC",
-  "oh-four-instruments":       "1vRGFRrXnVHRdCsOv9qj-xj6ZETlHxH0J"
+  "oh-four-instruments":       "1vRGFRrXnVHRdCsOv9qj-xj6ZETlHxH0J",
+
+  // ----- Wire progression -----
+  "wire-sequence-overview":    ""
 
 };
