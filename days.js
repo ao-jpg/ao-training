@@ -155,6 +155,6 @@ const DRIVE_VIDEOS = {
   "oh-four-instruments":       "1vRGFRrXnVHRdCsOv9qj-xj6ZETlHxH0J",
 
   // ----- Wire progression -----
-  "wire-sequence-overview":    ""
+  "wire-sequence-overview":    "1q4h98N_Ci-Dpy4u5RYSISaho61ei1qLd"
 
 };
