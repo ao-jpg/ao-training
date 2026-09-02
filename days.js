@@ -69,6 +69,13 @@ const TRAINING_DAYS = [
     week: "Hands-On Lessons",
     ready: true
   },
+  {
+    n: 13, file: "lesson-04.html", date: "Lesson 4",
+    title: "Working With Wires",
+    blurb: "Cinched wires, seating difficult wires, safe distal cutting, lace, step-down bends, archwire coordination, and marking before bending.",
+    week: "Hands-On Lessons",
+    ready: true
+  },
 
   // ---------- CLINICAL PROTOCOLS ----------
   {
@@ -83,13 +90,6 @@ const TRAINING_DAYS = [
     title: "Wire Progression — 24-Month Nonextraction",
     blurb: "Interactive flowchart of the nine-step pathway, both decision points, core rules, and the full appointment breakdown for each step.",
     week: "Clinical Protocols",
-    ready: true
-  },
-  {
-    n: 13, file: "lesson-04.html", date: "Lesson 4",
-    title: "Working With Wires",
-    blurb: "Cinched wires, seating difficult wires, safe distal cutting, lace, step-down bends, archwire coordination, and marking before bending.",
-    week: "Hands-On Lessons",
     ready: true
   }
 
