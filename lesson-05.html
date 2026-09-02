@@ -1,0 +1,753 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lesson 5 — Broken Brackets, Communication &amp; Clinic Flow | AO Clinical Training</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/manual.css">
+<style>
+:root{
+  --ink:#101C30; --navy:#16294A; --spine:#0C1B32; --spine-2:#152A48;
+  --paper:#FFFFFF; --wash:#F4F6F9; --rule:#DCE2EA; --muted:#5A6879;
+  --teal:#0E6E76; --teal-soft:#EAF3F4; --amber:#9A5B00; --amber-bg:#FDF6EA;
+  --red:#A32020; --red-bg:#FCF0F0; --green:#2E7D32; --green-bg:#F0F7F0;
+  --sans:"IBM Plex Sans",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  --serif:"Newsreader",Georgia,serif;
+  --mono:"IBM Plex Mono",ui-monospace,monospace;
+}
+*{box-sizing:border-box;}
+body{margin:0;font-family:var(--sans);color:var(--ink);background:var(--wash);
+     font-size:16px;line-height:1.62;-webkit-font-smoothing:antialiased;}
+.masthead{background:var(--spine);color:#fff;border-bottom:3px solid var(--teal);
+  padding:14px 26px;display:flex;align-items:center;gap:16px;flex-wrap:wrap;}
+.masthead .ao{font-family:var(--serif);font-size:22px;font-weight:600;}
+.masthead .tag{font-family:var(--mono);font-size:9.5px;letter-spacing:.2em;text-transform:uppercase;
+  color:#8FA6C4;border-left:1px solid rgba(255,255,255,.2);padding-left:16px;}
+.masthead a.home{margin-left:auto;color:#8FA6C4;text-decoration:none;font-family:var(--mono);
+  font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;
+  border:1px solid rgba(255,255,255,.22);padding:7px 13px;border-radius:3px;}
+.masthead a.home:hover{color:#fff;border-color:rgba(255,255,255,.5);}
+.sheet{background:var(--paper);max-width:900px;margin:0 auto;min-height:100vh;
+  padding:44px 56px 90px;border-left:1px solid var(--rule);border-right:1px solid var(--rule);}
+.dayhead{border-bottom:1px solid var(--rule);padding-bottom:26px;margin-bottom:24px;}
+.daynum{font-family:var(--mono);font-size:11px;letter-spacing:.2em;text-transform:uppercase;
+  color:var(--teal);margin-bottom:10px;}
+h1{font-family:var(--serif);font-weight:500;font-size:40px;line-height:1.12;margin:0 0 8px;
+  letter-spacing:-.015em;color:var(--navy);}
+.dayfocus{font-family:var(--serif);font-style:italic;font-size:18px;color:var(--muted);margin:0;}
+h2{font-family:var(--serif);font-weight:500;font-size:26px;color:var(--navy);
+  margin:56px 0 6px;scroll-margin-top:14px;}
+h2 .h2num{font-family:var(--mono);font-size:12px;color:var(--teal);letter-spacing:.12em;
+  display:block;margin-bottom:8px;}
+h3{font-size:16.5px;font-weight:600;margin:32px 0 8px;color:var(--navy);}
+h4{font-size:14.5px;font-weight:600;margin:20px 0 6px;color:var(--navy);}
+p{margin:0 0 14px;} ul,ol{margin:0 0 16px;padding-left:22px;} li{margin-bottom:6px;}
+li::marker{color:var(--muted);}
+.lede{font-size:17.5px;line-height:1.55;color:#2B3B52;}
+hr.div{border:0;border-top:1px solid var(--rule);margin:44px 0;}
+code{background:var(--wash);padding:2px 6px;border-radius:3px;font-family:var(--mono);font-size:13px;}
+.note,.watch,.safety{padding:16px 20px;margin:0 0 20px;font-size:15px;}
+.note{background:var(--wash);border-left:3px solid var(--navy);}
+.watch{background:var(--amber-bg);border-left:3px solid var(--amber);}
+.safety{background:var(--red-bg);border-left:3px solid var(--red);}
+.note p:last-child,.watch p:last-child,.safety p:last-child{margin-bottom:0;}
+.calloutlabel{font-family:var(--mono);font-size:9.5px;letter-spacing:.16em;text-transform:uppercase;
+  display:block;margin-bottom:7px;}
+.watch .calloutlabel{color:var(--amber);} .safety .calloutlabel{color:var(--red);}
+.note .calloutlabel{color:var(--navy);}
+
+.qnav{position:sticky;top:0;z-index:20;background:rgba(255,255,255,.96);
+  backdrop-filter:blur(6px);border-bottom:1px solid var(--rule);
+  margin:0 -56px 30px;padding:11px 56px;display:flex;gap:6px;flex-wrap:wrap;}
+.qnav a{font-family:var(--mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;
+  text-decoration:none;color:var(--muted);border:1px solid var(--rule);border-radius:3px;
+  padding:6px 10px;white-space:nowrap;}
+.qnav a:hover{color:#fff;background:var(--navy);border-color:var(--navy);}
+
+figure{margin:0 0 26px;}
+figure img{width:100%;display:block;border:1px solid var(--rule);border-radius:6px;background:var(--wash);}
+figure video{width:100%;border-radius:6px;display:block;background:#000;}
+figcaption{font-size:13.5px;color:var(--muted);margin-top:9px;}
+.medialabel{font-family:var(--mono);font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--teal);display:block;margin-bottom:4px;}
+.driveframe{position:relative;width:100%;padding-bottom:56.25%;border-radius:6px;overflow:hidden;background:#000;}
+.driveframe iframe{position:absolute;inset:0;width:100%;height:100%;border:0;}
+.pending-media{display:flex;flex-direction:column;align-items:center;justify-content:center;
+  background:var(--wash);border:1px dashed var(--rule);border-radius:6px;min-height:180px;
+  padding:26px;text-align:center;}
+.pending-media .pm-kind{font-family:var(--mono);font-size:9.5px;letter-spacing:.18em;
+  text-transform:uppercase;color:var(--teal);margin-bottom:8px;}
+.pending-media .pm-title{font-family:var(--serif);font-size:18px;color:var(--navy);margin-bottom:6px;}
+.pending-media .pm-note{font-size:13px;color:var(--muted);max-width:420px;}
+.pending-media .pm-file{font-family:var(--mono);font-size:11px;color:var(--muted);margin-top:10px;}
+.figsm{max-width:460px;margin-left:auto;margin-right:auto;}
+
+/* numbered procedure steps */
+ol.steps{list-style:none;padding-left:0;counter-reset:s;}
+ol.steps>li{counter-increment:s;position:relative;padding-left:46px;margin-bottom:18px;}
+ol.steps>li::before{content:counter(s,decimal-leading-zero);position:absolute;left:0;top:1px;
+  font-family:var(--mono);font-size:11.5px;color:var(--teal);
+  border:1px solid var(--rule);border-radius:3px;padding:3px 7px;background:#fff;}
+ol.steps>li>strong:first-child{display:block;margin-bottom:2px;}
+
+/* setup tray list */
+.tray{border:1px solid var(--rule);border-radius:7px;padding:18px 22px;margin-bottom:22px;background:#fff;}
+.tray ul{columns:2;column-gap:34px;margin:0;padding-left:20px;}
+.tray li{break-inside:avoid;margin-bottom:5px;font-size:14.5px;}
+@media (max-width:640px){.tray ul{columns:1;}}
+
+/* bur gallery */
+.burs{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-bottom:24px;}
+.burs figure{margin:0;}
+.burs img{background:#fff;}
+
+/* formula banner */
+.formula{background:var(--navy);color:#fff;border-radius:8px;padding:22px 26px;margin-bottom:26px;}
+.formula .fl{font-family:var(--mono);font-size:9.5px;letter-spacing:.18em;text-transform:uppercase;
+  color:#8FA6C4;display:block;margin-bottom:10px;}
+.formula .big{font-family:var(--mono);font-size:19px;letter-spacing:.08em;line-height:1.6;}
+.formula .eg{font-family:var(--serif);font-style:italic;font-size:16px;color:#D6E0EE;margin:14px 0 0;}
+.formula p{margin:12px 0 0;font-size:14.5px;color:#D6E0EE;}
+.formula p:last-child{margin-bottom:0;}
+.flowline{background:var(--wash);border:1px solid var(--rule);border-radius:7px;padding:18px 20px;
+  font-family:var(--mono);font-size:12.5px;line-height:2;letter-spacing:.04em;
+  color:var(--navy);margin-bottom:24px;}
+
+/* right vs wrong */
+.rw{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:24px;}
+.rw div{border-radius:7px;padding:16px 20px;font-size:14.5px;}
+.rw .good{background:var(--green-bg);border:1px solid #B8D6B8;}
+.rw .bad{background:var(--red-bg);border:1px solid #E6B8B8;}
+.rw b{display:block;font-family:var(--mono);font-size:9.5px;letter-spacing:.14em;
+  text-transform:uppercase;margin-bottom:7px;}
+.rw .good b{color:var(--green);} .rw .bad b{color:var(--red);}
+.rw q{font-family:var(--serif);font-style:italic;font-size:16px;color:var(--navy);quotes:'"' '"';}
+@media (max-width:640px){.rw{grid-template-columns:1fr;}}
+
+/* status cards */
+.statuses{display:grid;gap:12px;margin-bottom:26px;}
+.status{display:grid;grid-template-columns:150px 1fr;gap:18px;align-items:center;
+  border:1px solid var(--rule);border-radius:7px;padding:14px 18px;background:#fff;}
+.status img{width:100%;display:block;border-radius:4px;border:1px solid var(--rule);}
+.status h4{margin:0 0 4px;font-size:15.5px;}
+.status p{margin:0;font-size:14px;color:var(--muted);}
+.status.key{border-left:4px solid var(--teal);}
+@media (max-width:640px){.status{grid-template-columns:1fr;}}
+
+table{width:100%;border-collapse:collapse;margin:0 0 24px;font-size:14.5px;}
+th,td{text-align:left;padding:11px 12px;border-bottom:1px solid var(--rule);vertical-align:top;}
+th{font-family:var(--mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--muted);border-bottom:1px solid var(--navy);font-weight:500;}
+
+/* QC checklist grid */
+.qcgrid{border:1px solid var(--navy);border-radius:8px;overflow:hidden;margin-bottom:26px;}
+.qcgrid .qh{background:var(--navy);color:#fff;padding:13px 20px;font-family:var(--mono);
+  font-size:10px;letter-spacing:.18em;text-transform:uppercase;}
+.qcgrid .qb{padding:18px 22px;background:#fff;}
+.qcgrid h4{margin:0 0 10px;font-family:var(--mono);font-size:9.5px;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--teal);}
+.qcgrid label{display:flex;gap:11px;align-items:flex-start;padding:6px 0;cursor:pointer;font-size:14.5px;}
+.qcgrid input{width:17px;height:17px;margin:2px 0 0;accent-color:var(--teal);flex:0 0 auto;}
+.qcgrid input:checked + span{color:var(--muted);text-decoration:line-through;}
+.qcgrid .cols2{columns:2;column-gap:30px;}
+.qcgrid .cols2 label{break-inside:avoid;}
+@media (max-width:640px){.qcgrid .cols2{columns:1;}}
+
+.checklist{border:1px solid var(--rule);border-radius:6px;padding:8px 22px 18px;margin:34px 0 0;}
+.checklist h3{font-family:var(--mono);font-size:10px;letter-spacing:.18em;text-transform:uppercase;
+  color:var(--muted);font-weight:500;margin:18px 0 12px;}
+.checklist label{display:flex;gap:12px;align-items:flex-start;padding:9px 0;
+  border-bottom:1px solid #EEF1F5;cursor:pointer;font-size:15px;}
+.checklist label:last-of-type{border-bottom:0;}
+.checklist input[type=checkbox]{width:19px;height:19px;margin:2px 0 0;accent-color:var(--teal);flex:0 0 auto;}
+.checklist input:checked + span{color:var(--muted);text-decoration:line-through;}
+.progressbar{height:5px;background:var(--rule);border-radius:3px;overflow:hidden;margin:14px 0 4px;}
+.progressbar div{height:100%;background:var(--teal);width:0;transition:width .25s;}
+.progresstext{font-family:var(--mono);font-size:10.5px;letter-spacing:.1em;color:var(--muted);
+  text-transform:uppercase;}
+.signoff{background:var(--wash);border:1px solid var(--rule);border-radius:6px;padding:22px 24px;margin-top:30px;}
+.signoff h3{margin-top:0;}
+.sigrow{display:flex;gap:28px;flex-wrap:wrap;margin-top:20px;}
+.sigfield{flex:1 1 200px;}
+.sigline{border-bottom:1px solid var(--ink);height:32px;}
+.siglabel{font-family:var(--mono);font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--muted);margin-top:6px;}
+.blank{display:inline-block;border-bottom:1px solid var(--ink);min-width:120px;}
+
+@media (max-width:820px){
+  .sheet{padding:26px 20px 70px;border:0;}
+  .qnav{margin:0 -20px 24px;padding:10px 20px;}
+  h1{font-size:29px;} h2{font-size:22px;}
+  .burs{grid-template-columns:1fr;}
+  .masthead .tag{display:none;}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;}}
+@media print{.masthead,.qnav,.progressbar{display:none!important;}
+  .sheet{max-width:none;padding:0;border:0;} body{background:#fff;font-size:11pt;}}
+</style>
+</head>
+<body>
+<header class="masthead">
+  <span class="ao">Alexandria Orthodontics</span>
+  <span class="tag">Clinical Training Manual</span>
+  <a class="home" href="index.html">All lessons</a>
+</header>
+<div class="sheet" id="top">
+
+  <div class="dayhead">
+    <div class="daynum">Lesson 05 &nbsp;·&nbsp; Hands-on clinical</div>
+    <h1>Broken Brackets, Communication &amp; Clinic Flow</h1>
+    <p class="dayfocus">Repairing the bracket is half of it. Getting the doctor to the right chair at the right time is the other half.</p>
+  </div>
+
+  <nav class="qnav">
+    <a href="#contents">Contents</a>
+    <a href="#repair">1 · The repair</a>
+    <a href="#radio">2 · Radio call</a>
+    <a href="#lightbar">3 · Light bar</a>
+    <a href="#flow">4 · Clinic flow</a>
+    <a href="#dismissal">5 · Before dismissal</a>
+    <a href="#reliawax">6 · ReliaWax</a>
+  </nav>
+
+  <p class="lede">A broken bracket is one of the most common unexpected issues you will meet during an adjustment. Your job is not only to repair it correctly, but to communicate early, prepare efficiently, maintain isolation, and have the doctor arrive at the right moment.</p>
+
+  <h2 id="contents"><span class="h2num">Contents</span>What is in this lesson</h2>
+  <table>
+    <tr><th>Section</th><th>What it covers</th></tr>
+    <tr><td><a href="#repair"><strong>1 · The repair</strong></a></td>
+        <td>Setup, composite removal, buttering the bracket, retractors, etch, isolation, priming, placement, curing, and the bite check.</td></tr>
+    <tr><td><a href="#radio"><strong>2 · The radio call</strong></a></td>
+        <td>Chair, bracket, ETA. What a good call sounds like and what a useless one sounds like.</td></tr>
+    <tr><td><a href="#lightbar"><strong>3 · The light bar</strong></a></td>
+        <td>Every status, what each one means, and the two ways to change one.</td></tr>
+    <tr><td><a href="#flow"><strong>4 · Clinic flow</strong></a></td>
+        <td>Priority, the doctor handoff, and continuing productive work while you wait.</td></tr>
+    <tr><td><a href="#dismissal"><strong>5 · Before the patient leaves</strong></a></td>
+        <td>The ten-point check every patient gets before they get out of the chair.</td></tr>
+    <tr><td><a href="#reliawax"><strong>6 · ReliaWax</strong></a></td>
+        <td>Light-cured wax for irritating brackets, hooks, and wires.</td></tr>
+  </table>
+
+  <hr class="div">
+
+  <h2 id="repair"><span class="h2num">Section 1</span>The broken bracket repair</h2>
+
+  <figure>
+    <video controls preload="metadata" data-kind="Video" data-title="Setting Up for a Broken Bracket"
+           data-note="Gathering and arranging the repair setup."
+           data-file="video/l5-broken-bracket-setup.mp4">
+      <source src="video/l5-broken-bracket-setup.mp4" type="video/mp4" onerror="mediaPending(this)">
+    </video>
+    <figcaption><span class="medialabel">Watch</span>Setting up for a broken bracket repair.</figcaption>
+  </figure>
+
+  <figure>
+    <video controls preload="metadata" data-kind="Video" data-title="Repairing a Broken Bracket"
+           data-note="The full repair from composite removal through the bite check."
+           data-file="video/l5-broken-bracket-repair.mp4">
+      <source src="video/l5-broken-bracket-repair.mp4" type="video/mp4" onerror="mediaPending(this)">
+    </video>
+    <figcaption><span class="medialabel">Watch</span>The complete repair.</figcaption>
+  </figure>
+
+  <h3>1 · Communicate with the clinic coordinator first</h3>
+  <p>As soon as you identify a broken bracket, notify the clinic coordinator. Three things, clearly: <strong>what chair you are in, how many broken brackets you have, and your ETA for when you will need the doctor.</strong></p>
+  <div class="formula">
+    <span class="fl">Say it like this</span>
+    <p class="eg">"Chair 4. One broken bracket on an incisor. I'm going to prep the bracket and I'll need Dr. Lee in about 3 minutes."</p>
+  </div>
+  <p>The clinic coordinator coordinates the doctor's movement through the clinic so the doctor arrives when the tooth and bracket are ready. The goal is to avoid the doctor waiting while you are still setting up, and to avoid the tooth sitting exposed and isolated while waiting for the doctor. Section 2 covers this call in full.</p>
+
+  <h3>2 · Gather the repair setup</h3>
+  <figure><img src="img/l5-repair-setup.png" alt="Broken bracket repair setup laid out"
+    data-kind="Photo" data-title="Repair setup" data-file="img/l5-repair-setup.png" onerror="mediaPending(this)">
+    <figcaption><span class="medialabel">Reference</span>The full repair setup.</figcaption></figure>
+  <div class="tray">
+    <ul>
+      <li>High-speed handpiece</li>
+      <li>Gold flame polishing bur</li>
+      <li>Air-water syringe</li>
+      <li>High-speed suction</li>
+      <li>Slow-speed suction</li>
+      <li>Appropriate retractors</li>
+      <li>Cotton rolls</li>
+      <li>Opal Etch</li>
+      <li>Assure Plus primer</li>
+      <li>Microbrush</li>
+      <li>Resin well</li>
+      <li>GoTo adhesive</li>
+      <li>PFI</li>
+      <li>Correct replacement bracket</li>
+      <li>Blue light blocker</li>
+      <li>Curing light</li>
+    </ul>
+  </div>
+  <p><strong>Before beginning, confirm you have the correct bracket for the correct tooth.</strong></p>
+
+  <h3>3 · Remove the old composite</h3>
+  <figure><img src="img/l5-composite-removal.png" alt="Removing composite with a high-speed handpiece"
+    data-kind="Photo" data-title="Composite removal" data-file="img/l5-composite-removal.png" onerror="mediaPending(this)"></figure>
+  <p>Use the high-speed handpiece with the gold flame polishing bur to remove the remaining composite. The fluted polishing bur removes bonding material while minimizing enamel removal.</p>
+  <div class="safety">
+    <span class="calloutlabel">Technique that protects enamel</span>
+    <p>Use the <strong>side</strong> of the bur against the composite. Avoid digging into the enamel with the tip — the tip can gouge enamel if used incorrectly. Another technician should suction during this step whenever possible.</p>
+  </div>
+
+  <h4>Main burs for removing glue</h4>
+  <figure><img src="img/l5-burs-overview.png" alt="Burs used for glue removal"
+    data-kind="Photo" data-title="Burs for glue removal" data-file="img/l5-burs-overview.png" onerror="mediaPending(this)">
+    <figcaption>These burs are also used for bite blocks, cleaning excess glue from LBRs, and removing glue from crowns and leftover ceramic brackets.</figcaption></figure>
+  <div class="burs">
+    <figure><img src="img/l5-bur-a.png" alt="Bur" data-kind="Photo" data-title="Bur" data-file="img/l5-bur-a.png" onerror="mediaPending(this)"></figure>
+    <figure><img src="img/l5-bur-b.png" alt="Bur" data-kind="Photo" data-title="Bur" data-file="img/l5-bur-b.png" onerror="mediaPending(this)"></figure>
+    <figure><img src="img/l5-bur-c.png" alt="Bur" data-kind="Photo" data-title="Bur" data-file="img/l5-bur-c.png" onerror="mediaPending(this)"></figure>
+  </div>
+
+  <h3>4 · Prepare the bracket before placing retractors</h3>
+  <p>While the patient is still comfortable and before full isolation begins, prepare the replacement bracket.</p>
+
+  <figure>
+    <video controls preload="metadata" data-kind="Video" data-title="Buttering the Bracket"
+           data-note="Putting glue on a bracket pad, step by step."
+           data-file="video/l5-buttering-bracket.mp4">
+      <source src="video/l5-buttering-bracket.mp4" type="video/mp4" onerror="mediaPending(this)">
+    </video>
+    <figcaption><span class="medialabel">Watch</span>Putting glue on a bracket pad, step by step.</figcaption>
+  </figure>
+
+  <ol class="steps">
+    <li><strong>Select the correct bracket</strong>Confirm the correct tooth, arch, side, and bracket prescription. <strong>Do not assume the bracket is correct because it looks similar.</strong></li>
+    <li><strong>Apply Assure Plus to the bracket pad</strong>A small amount onto the pad, then air dry. The goal is a thin layer. Do not leave a pool of Assure Plus sitting on the pad — too much primer interferes with bond quality.</li>
+    <li><strong>Apply GoTo adhesive</strong>A small amount of GoTo cement on the bracket pad.</li>
+    <li><strong>Butter the bracket</strong>Using the PFI, move the adhesive side to side across the bracket mesh. This is what we call buttering. It pushes adhesive into the grids of the pad and creates mechanical retention between adhesive and bracket base.</li>
+    <li><strong>Protect it from light</strong>Keep the prepared bracket under a blue light blocker. Do not leave it exposed to the operatory light — the adhesive can begin curing before the bracket is placed.</li>
+  </ol>
+  <figure class="figsm"><img src="img/l5-blue-light-blocker.png" alt="Prepared bracket under a blue light blocker"
+    data-kind="Photo" data-title="Blue light blocker" data-file="img/l5-blue-light-blocker.png" onerror="mediaPending(this)"></figure>
+
+  <h3>5 · Choose the correct retractor</h3>
+  <table>
+    <tr><th>Location</th><th>Retractor</th><th>Why</th></tr>
+    <tr><td><strong>Posterior · 5s through 8s</strong></td><td>Large white Nola retractor</td><td>Better access and isolation for posterior bonding.</td></tr>
+    <tr><td><strong>Anterior · 4–4</strong></td><td>Red retractors</td><td>Easier for anterior teeth and premolars through the first premolar region.</td></tr>
+  </table>
+  <div class="safety">
+    <span class="calloutlabel">Seat it properly</span>
+    <p>Make sure the lips and cheeks are <strong>completely captured</strong> by the retractor. Do not simply tuck the retractor under the lip. A poorly seated retractor can slip out during bonding and contaminate the tooth.</p>
+  </div>
+  <figure><img src="img/l5-retractors.png" alt="Retractors" data-kind="Photo" data-title="Retractors"
+    data-file="img/l5-retractors.png" onerror="mediaPending(this)"></figure>
+
+  <h3>6 · Etch the tooth</h3>
+  <figure><img src="img/l5-etching.png" alt="Etching the enamel surface" data-kind="Photo" data-title="Etching"
+    data-file="img/l5-etching.png" onerror="mediaPending(this)"></figure>
+  <p>AO uses Opal Etch. Place the etchant on the enamel surface where the bracket will be bonded.</p>
+  <div class="safety">
+    <span class="calloutlabel">Safety rule</span>
+    <p>Do not allow etch to contact the lips, cheeks, gingiva, or other soft tissue. <strong>Phosphoric acid etch can cause a chemical burn.</strong> Maintain control of the syringe at all times.</p>
+  </div>
+  <figure><img src="img/l5-etch-safety.png" alt="Etch safety" data-kind="Photo" data-title="Etch control"
+    data-file="img/l5-etch-safety.png" onerror="mediaPending(this)"></figure>
+
+  <h3>7 · Rinse thoroughly</h3>
+  <p>Suction the etchant, rinse the tooth thoroughly, remove all visible etchant, and continue suctioning during the rinse. <strong>Do not rush this step.</strong></p>
+
+  <h3>8 · Create excellent isolation</h3>
+  <p>Isolation is one of the most important parts of a successful repair. <strong>Saliva contamination significantly weakens the bond.</strong> For posterior brackets we commonly use this technique:</p>
+  <ol class="steps">
+    <li><strong>Create a Z bend in the slow-speed suction</strong>Bend it into a shape that rests comfortably and helps control saliva.</li>
+    <li><strong>Place a cotton roll</strong>Between the tongue and the lingual surface of the teeth being bonded, keeping tongue and saliva away from the bonding area.</li>
+    <li><strong>Have the patient bite on the suction</strong>Position it so the patient can gently bite, with the cotton roll remaining between tongue and teeth.</li>
+    <li><strong>Have the patient help hold it</strong>Once positioned, have the patient gently hold the suction if appropriate. This frees your hands while maintaining isolation.</li>
+  </ol>
+
+  <h3>9 · Dry and inspect the enamel</h3>
+  <p>Air dry thoroughly. A properly etched surface should have a <strong>frosty or chalky appearance</strong>.</p>
+  <div class="watch">
+    <span class="calloutlabel">If you do not see frosty</span>
+    <p>Re-etch the tooth. Do not continue simply because you have already completed the etching step. A poor etched appearance can indicate inadequate preparation or contamination.</p>
+  </div>
+
+  <h3>10 · Keep the tooth dry</h3>
+  <p>Once etched and dried, isolation becomes critical. Do not allow tongue contact, saliva, moisture, or lip and cheek contact. <strong>If contamination occurs, stop and correct it before continuing.</strong></p>
+
+  <h3>11 · Apply Assure Plus to the tooth</h3>
+  <figure><img src="img/l5-assure-plus-tooth.png" alt="Applying primer to the tooth" data-kind="Photo"
+    data-title="Assure Plus on the tooth" data-file="img/l5-assure-plus-tooth.png" onerror="mediaPending(this)"></figure>
+  <p>A small amount onto a microbrush, rubbed across the <strong>entire</strong> prepared enamel surface — not only the center of the tooth. Then air dry. The goal is to spread the primer evenly, thin the material, and avoid pooling. The tooth should have a very thin layer.</p>
+
+  <h3>12 · Place the bracket</h3>
+  <figure><img src="img/l5-bracket-placement.png" alt="Placing the bracket on the tooth" data-kind="Photo"
+    data-title="Bracket placement" data-file="img/l5-bracket-placement.png" onerror="mediaPending(this)"></figure>
+  <p>Remove the prepared bracket from under the blue light blocker and place it on the tooth. At this point <strong>the bracket should be ready for the doctor</strong>, who positions it for mesial-distal position, incisal-gingival position, angulation, and rotation. Have everything ready so the doctor can position efficiently.</p>
+
+  <h3>13 · Remove excess adhesive</h3>
+  <p>Once the doctor confirms position, carefully remove excess adhesive from the gingival, mesial, distal, and incisal or occlusal edges. <strong>Do not disturb the bracket while cleaning.</strong></p>
+
+  <h3>14 · Cure from a distance first</h3>
+  <p>Do not immediately place the curing light directly against the bracket. Start slightly farther away, which reduces the chance of bumping the bracket before the adhesive has stabilized. After the initial cure, move the light closer.</p>
+
+  <h3>15 · Triple cure the bracket</h3>
+  <figure><img src="img/l5-triple-cure.png" alt="Curing the bracket" data-kind="Photo" data-title="Triple cure"
+    data-file="img/l5-triple-cure.png" onerror="mediaPending(this)"></figure>
+  <p>At AO, brackets are commonly cured <strong>three times, approximately 3 seconds per cure, from three different angles</strong> around the bracket — for example mesial, distal, and occlusal or incisal. The exact technique should follow the curing light and adhesive manufacturer instructions used in the office.</p>
+
+  <h3>16 · Remove isolation and let the patient rinse</h3>
+  <p>Remove the cotton roll, remove the suction, carefully remove the retractors, and give the patient a rinse. Make sure no bonding debris remains around the bracket or gingiva.</p>
+
+  <h3>17 · Check the bite</h3>
+  <p>Have the patient bite all the way down. Check whether the opposing teeth are contacting the newly bonded bracket.</p>
+  <div class="safety">
+    <span class="calloutlabel">If the patient is biting directly on the bracket</span>
+    <p><strong>Do not dismiss the patient. Notify the doctor.</strong> Heavy occlusal contact can cause the bracket to break again almost immediately.</p>
+  </div>
+
+  <h3>The workflow</h3>
+  <div class="flowline">
+    COMMUNICATE → SET UP → CLEAN → PREP BRACKET → RETRACT → ETCH → RINSE → ISOLATE →<br>
+    DRY → PRIME → PLACE → POSITION → CLEAN → CURE → RINSE → CHECK BITE
+  </div>
+
+  <div class="qcgrid">
+    <div class="qh">Quality control · before the doctor arrives</div>
+    <div class="qb">
+      <div class="cols2">
+        <label><input type="checkbox"><span>Correct bracket selected</span></label>
+        <label><input type="checkbox"><span>Composite removed</span></label>
+        <label><input type="checkbox"><span>Bracket pad primed</span></label>
+        <label><input type="checkbox"><span>Primer air-thinned</span></label>
+        <label><input type="checkbox"><span>GoTo placed</span></label>
+        <label><input type="checkbox"><span>Adhesive buttered into mesh</span></label>
+        <label><input type="checkbox"><span>Prepared bracket under blue light blocker</span></label>
+        <label><input type="checkbox"><span>Correct retractor placed</span></label>
+        <label><input type="checkbox"><span>Tooth etched</span></label>
+        <label><input type="checkbox"><span>Etch completely rinsed</span></label>
+        <label><input type="checkbox"><span>Isolation established</span></label>
+        <label><input type="checkbox"><span>Enamel is frosty</span></label>
+        <label><input type="checkbox"><span>Assure Plus applied to tooth</span></label>
+        <label><input type="checkbox"><span>Primer air-thinned</span></label>
+        <label><input type="checkbox"><span>Tooth remains completely dry</span></label>
+      </div>
+      <h4 style="margin-top:18px;">After bonding</h4>
+      <div class="cols2">
+        <label><input type="checkbox"><span>Excess adhesive removed</span></label>
+        <label><input type="checkbox"><span>Bracket triple cured</span></label>
+        <label><input type="checkbox"><span>Retractors removed safely</span></label>
+        <label><input type="checkbox"><span>Patient rinsed</span></label>
+        <label><input type="checkbox"><span>Bite checked</span></label>
+        <label><input type="checkbox"><span>No contact on repaired bracket</span></label>
+        <label><input type="checkbox"><span>Patient comfortable</span></label>
+        <label><input type="checkbox"><span>Repair documented</span></label>
+      </div>
+    </div>
+  </div>
+
+  <div class="formula">
+    <span class="fl">Training takeaway</span>
+    <div class="big">PREPARATION. ISOLATION. TIMING.</div>
+    <p>Have the tooth and bracket completely prepared so the doctor can arrive, position the bracket, and move efficiently to the next patient. The better the communication with the clinic coordinator, the smoother the entire clinic runs.</p>
+  </div>
+
+  <hr class="div">
+
+  <h2 id="radio"><span class="h2num">Section 2</span>The radio call</h2>
+
+  <figure>
+    <video controls preload="metadata" data-kind="Video" data-title="Communicating a Broken Bracket"
+           data-note="The radio call and how the coordinator responds."
+           data-file="video/l5-communication.mp4">
+      <source src="video/l5-communication.mp4" type="video/mp4" onerror="mediaPending(this)">
+    </video>
+    <figcaption><span class="medialabel">Watch</span>The communication, start to finish.</figcaption>
+  </figure>
+
+  <p class="lede">Do not wait until the patient is completely ready before notifying the team. The clinic coordinator needs advance notice so they can coordinate the doctor's movement, compare priorities between chairs, update the light bar, and stop one broken bracket from disrupting the entire clinic.</p>
+
+  <p>All technicians carry a Motorola radio with a headset. The front desk has a handheld. We use it primarily to coordinate patient flow and to ask for help gathering supplies missing from a procedure.</p>
+
+  <div class="formula">
+    <span class="fl">Memorize this</span>
+    <div class="big">CHAIR → BRACKET → ETA</div>
+    <p class="eg">"Chair 4. One broken bracket on the lower canine. I'll need Dr. Lee in three minutes."</p>
+    <p>That should become automatic.</p>
+  </div>
+
+  <div class="rw">
+    <div class="good"><b>Correct</b><q>Chair 4. I have one broken bracket on an incisor. I'm going to prep this bracket and I'll need Dr. Lee in three minutes.</q></div>
+    <div class="bad"><b>Not this</b><q>Dr. Lee, I have a broken bracket.</q>
+      <p style="margin:10px 0 0;font-size:13.5px;">This tells the team almost nothing. They do not know where the patient is, how much work is required, or when the doctor should arrive.</p></div>
+  </div>
+
+  <p>Also not acceptable: <em>"I need Dr. Lee."</em> &nbsp;·&nbsp; <em>"I have a broken bracket."</em> &nbsp;·&nbsp; <em>"Can somebody get the doctor?"</em></p>
+
+  <p>The call should immediately answer three questions: <strong>Where are you? What does the doctor need to do? When do you need the doctor?</strong></p>
+
+  <h3>The three pieces</h3>
+  <ol class="steps">
+    <li><strong>Chair number</strong>Tell everyone exactly where you are.</li>
+    <li><strong>Number and location of the broken brackets</strong>"One broken bracket on the lower canine." "Two broken brackets, UL2 and UL3." "One broken bracket on an incisor."</li>
+    <li><strong>ETA for the doctor</strong>Estimate when the patient will <em>actually</em> be ready. "I'll need Dr. Lee in three minutes." "I'll have the patient isolated and ready in five minutes."</li>
+  </ol>
+
+  <div class="note">
+    <span class="calloutlabel">Identify it first</span>
+    <p>During the adjustment, check for loose or broken brackets. If a bracket moves when tested, confirm which tooth is involved, how many are broken, and roughly how much preparation is needed before the doctor can bond. <strong>Do not simply continue the appointment without communicating the finding.</strong></p>
+  </div>
+
+  <h3>The coordinator's side</h3>
+  <div class="formula">
+    <span class="fl">Coordinator formula</span>
+    <div class="big">PRIORITY → HANDOFF → NEXT STEP</div>
+    <p><strong>Priority:</strong> who needs the doctor first? &nbsp;<strong>Handoff:</strong> can the technician with the doctor take over? &nbsp;<strong>Next step:</strong> what should each waiting chair continue doing?</p>
+    <p class="eg">"Chair 4, copy. Chair 3 is ahead of you with two broken brackets. Advance the upper wire while you wait. Tech 1, can you take over Chair 1 so Dr. Lee can move to Chair 3?"</p>
+  </div>
+  <p>That turns several individual chairs into one coordinated clinic. The coordinator determines where the doctor is currently working, what other patients are waiting, which patient is ready first, which procedures need immediate doctor involvement, and whether another technician can take over the doctor's current patient. <strong>The clinic coordinator, not the individual technician, controls the order in which the doctor moves between chairs.</strong></p>
+
+  <hr class="div">
+
+  <h2 id="lightbar"><span class="h2num">Section 3</span>The light bar</h2>
+
+  <p class="lede">The light bar is the clinic's visual traffic-control system. When the patient's needs change, the light bar should change with them. It should always reflect what is actually happening clinically.</p>
+
+  <figure><img src="img/l5-light-bar.png" alt="The color-coded light bar" data-kind="Screenshot"
+    data-title="The light bar" data-file="img/l5-light-bar.png" onerror="mediaPending(this)">
+    <figcaption><span class="medialabel">Reference</span>The color-coded status bar.</figcaption></figure>
+
+  <h3>Two ways to change a status</h3>
+  <ol class="steps">
+    <li><strong>From the light bar</strong>Locate the patient, double left-click, and change their Lighting System status. The patient's color changes.</li>
+    <li><strong>Quick Light Bar</strong>Inside the patient's Treatment Card, usually lower left, select the status directly without leaving the chart.</li>
+  </ol>
+  <figure><img src="img/l5-lightbar-method-1.png" alt="Changing status from the light bar" data-kind="Screenshot"
+    data-title="Method 1" data-file="img/l5-lightbar-method-1.png" onerror="mediaPending(this)">
+    <figcaption>Method 1 — from the light bar.</figcaption></figure>
+  <figure><img src="img/l5-lightbar-method-2.png" alt="Quick light bar in the treatment card" data-kind="Screenshot"
+    data-title="Method 2" data-file="img/l5-lightbar-method-2.png" onerror="mediaPending(this)">
+    <figcaption>Method 2 — Quick Light Bar in the Treatment Card.</figcaption></figure>
+
+  <h3>The three that matter most for broken brackets</h3>
+  <div class="statuses">
+    <div class="status key">
+      <img src="img/l5-status-assistant-treating.png" alt="Assistant treatment patient status"
+        data-kind="Screenshot" data-title="Assistant treatment patient" data-file="img/l5-status-assistant-treating.png" onerror="mediaPending(this)">
+      <div><h4>Assistant Treatment Patient</h4><p>The technician is actively treating the patient.</p></div>
+    </div>
+    <div class="status key">
+      <img src="img/l5-status-attention-needed.png" alt="Attention needed status"
+        data-kind="Screenshot" data-title="Attention needed" data-file="img/l5-status-attention-needed.png" onerror="mediaPending(this)">
+      <div><h4>Attention Needed</h4><p>The patient requires significant doctor attention. A broken bracket repair is a bonding procedure, so it falls here.</p></div>
+    </div>
+    <div class="status key">
+      <img src="img/l5-status-doctor-treating.png" alt="Doctor is currently treating status"
+        data-kind="Screenshot" data-title="Doctor is currently treating" data-file="img/l5-status-doctor-treating.png" onerror="mediaPending(this)">
+      <div><h4>Doctor Is Currently Treating</h4><p>The doctor is at the chair performing treatment.</p></div>
+    </div>
+  </div>
+
+  <figure><img src="img/l5-status-immediate-attention.png" alt="Situations needing immediate attention"
+    data-kind="Screenshot" data-title="Immediate attention situations" data-file="img/l5-status-immediate-attention.png" onerror="mediaPending(this)">
+    <figcaption>Situations requiring immediate attention: bondings, LBR placement, TAD or gingivectomy when isolation is needed, and other procedures requiring significant doctor involvement.</figcaption></figure>
+
+  <h3>The rest of the statuses</h3>
+  <div class="statuses">
+    <div class="status">
+      <img src="img/l5-status-chair-occupied.png" alt="Chair occupied status" data-kind="Screenshot"
+        data-title="Chair occupied" data-file="img/l5-status-chair-occupied.png" onerror="mediaPending(this)">
+      <div><h4>Chair Occupied</h4><p>The patient is seated but no technician is currently available to treat them.</p></div>
+    </div>
+    <div class="status">
+      <img src="img/l5-status-quick-check.png" alt="Quick check status" data-kind="Screenshot"
+        data-title="Quick check" data-file="img/l5-status-quick-check.png" onerror="mediaPending(this)">
+      <div><h4>Quick Check</h4><p>A brief doctor check, usually no more than about two minutes before dismissal.</p></div>
+    </div>
+    <div class="status">
+      <img src="img/l5-status-conference-room.png" alt="Meet in conference room status" data-kind="Screenshot"
+        data-title="Meet in conference room" data-file="img/l5-status-conference-room.png" onerror="mediaPending(this)">
+      <div><h4>Meet in Conference Room</h4><p>Discussion needed before entering the treatment area: updates from the dentist, patient concerns, complex treatment plans, refinement scans, consultations for new patients and debonds.</p></div>
+    </div>
+    <div class="status">
+      <img src="img/l5-status-coordinator-treating.png" alt="Clinic coordinator is treating status" data-kind="Screenshot"
+        data-title="Clinic coordinator is treating" data-file="img/l5-status-coordinator-treating.png" onerror="mediaPending(this)">
+      <div><h4>Clinic Coordinator Is Treating</h4><p>The coordinator has stepped in as a backup technician because the clinic is behind. The assigned tech should take back over when free.</p></div>
+    </div>
+  </div>
+
+  <figure><img src="img/l5-statuses-overview.png" alt="All light bar statuses" data-kind="Screenshot"
+    data-title="All statuses" data-file="img/l5-statuses-overview.png" onerror="mediaPending(this)">
+    <figcaption><span class="medialabel">Reference · print for the operatory</span>Every status on one page.</figcaption></figure>
+
+  <hr class="div">
+
+  <h2 id="flow"><span class="h2num">Section 4</span>Clinic flow: priority and handoff</h2>
+
+  <div class="watch">
+    <span class="calloutlabel">Attention Needed does not mean next</span>
+    <p>There may be several chairs requiring the doctor at the same time. Chair 4 has one broken bracket and needs the doctor in three minutes. Chair 3 has two broken brackets, already prepared, and needs the doctor now. The coordinator establishes the order.</p>
+    <p style="margin-top:10px;font-style:italic;">"Okay, Chair 4. We have a patient in Chair 3 ahead of you with two broken brackets. Go ahead and advance the wire on the upper arch. We will need Dr. Lee in Chair 3 first."</p>
+  </div>
+
+  <p>The light bar and the radio should tell the same story. Everyone can see which patients require attention, while the coordinator verbally controls the order.</p>
+
+  <h3>Keep working while you wait</h3>
+  <p>A broken bracket should not stop the entire appointment. If the coordinator says another patient must be seen first, continue whatever parts of the appointment can safely be completed. <strong>This is one of the biggest differences between an efficient clinic and a bottleneck.</strong></p>
+
+  <h3>Create the handoff before you are asked</h3>
+  <p>When the coordinator announces that Dr. Lee is needed elsewhere, the technician currently working with the doctor should be listening. If you can finish the remaining portion of that appointment, say so proactively.</p>
+  <div class="rw">
+    <div class="good"><b>Anticipate</b><q>I can take this adjustment from here, Dr. Lee. I'll finish writing this note and take over. They need you in Chair 3.</q></div>
+    <div class="bad"><b>The doctor should never have to ask</b><q>Can somebody take over for me?</q>
+      <p style="margin:10px 0 0;font-size:13.5px;">The team should anticipate the transition rather than waiting to be asked.</p></div>
+  </div>
+
+  <h3>The transition</h3>
+  <ol class="steps">
+    <li><strong>Doctor completes the immediate step</strong>Removes the instrument from the patient's mouth and places it on the tray.</li>
+    <li><strong>Technician moves into the working position</strong>The first patient keeps progressing rather than sitting unattended.</li>
+    <li><strong>Doctor leaves for the prioritized chair</strong></li>
+    <li><strong>Update the light bar to Doctor Is Currently Treating</strong>Once the doctor reaches the broken-bracket patient and begins treatment.</li>
+    <li><strong>Coordinator releases the next chair</strong>"Okay, Dr. Lee is in Chair 3. Chair 4, you can start prepping for the broken bracket." Now the timing of the final preparation matches the doctor's expected availability.</li>
+    <li><strong>Prepare before the doctor arrives</strong>The doctor should walk into a ready patient and perform only the doctor-specific portion, not arrive and wait.</li>
+    <li><strong>After the doctor finishes</strong>Update the light bar again. If you are completing the appointment, the patient returns to Assistant Treatment Patient. Then finish the clinical work and the documentation.</li>
+  </ol>
+
+  <h3>The whole system</h3>
+  <div class="flowline">
+    Broken bracket discovered → Radio call with CHAIR + BRACKET + ETA → Light bar updated →<br>
+    Coordinator establishes priority → Current tech creates doctor handoff →<br>
+    Doctor goes to highest-priority chair → Light bar changes to Doctor Treating →<br>
+    Next chair begins preparation → Doctor transitions again without waiting
+  </div>
+
+  <div class="formula">
+    <span class="fl">The goal</span>
+    <p style="margin:0;font-size:15.5px;">Not simply to get Dr. Lee to the broken bracket as quickly as possible. The goal is to get Dr. Lee to <strong>the right patient at the right time</strong>, while every other technician continues moving their own patient forward.</p>
+  </div>
+
+  <hr class="div">
+
+  <h2 id="dismissal"><span class="h2num">Section 5</span>Before the patient leaves the chair</h2>
+
+  <div class="flowline" style="text-align:center;">
+    POKE → TIES → WIRE → MECHANICS → ELASTICS → BITE → OH → SUPPLIES → NOTE → NEXT VISIT
+  </div>
+
+  <div class="qcgrid">
+    <div class="qh">Dismissal check</div>
+    <div class="qb">
+      <h4>1 · Poking or discomfort</h4>
+      <label><input type="checkbox"><span>Asked the patient if anything feels sharp, poking, or uncomfortable</span></label>
+      <label><input type="checkbox"><span>Checked distal wire ends</span></label>
+      <label><input type="checkbox"><span>Checked steel ties, lace, hooks, and any sharp areas</span></label>
+
+      <h4>2 · Ties and ligatures</h4>
+      <label><input type="checkbox"><span>All O-ties present</span></label>
+      <label><input type="checkbox"><span>Power chain secure</span></label>
+      <label><input type="checkbox"><span>Steel ties tight and fully tucked</span></label>
+      <label><input type="checkbox"><span>Lace secure and not poking</span></label>
+
+      <h4>3 · The archwire</h4>
+      <label><input type="checkbox"><span>Wire fully engaged where intended</span></label>
+      <label><input type="checkbox"><span>Wire centered</span></label>
+      <label><input type="checkbox"><span>No loose or distorted sections</span></label>
+      <label><input type="checkbox"><span>7s engaged if they are supposed to be</span></label>
+
+      <h4>4 · Treatment mechanics</h4>
+      <label><input type="checkbox"><span>Power chain, lace, coil springs</span></label>
+      <label><input type="checkbox"><span>Step-down bends, reverse curve</span></label>
+      <label><input type="checkbox"><span>Hooks, buttons, other prescribed auxiliaries</span></label>
+
+      <h4>5 · Elastics</h4>
+      <label><input type="checkbox"><span>Correct elastic pattern confirmed</span></label>
+      <label><input type="checkbox"><span>Patient knows where to wear them</span></label>
+      <label><input type="checkbox"><span>Enough elastics to take home</span></label>
+
+      <h4>6 · Oral hygiene</h4>
+      <label><input type="checkbox"><span>Checked for plaque or inflammation</span></label>
+      <label><input type="checkbox"><span>Reinforced brushing and flossing where needed</span></label>
+
+      <h4>7 · The bite</h4>
+      <label><input type="checkbox"><span>Patient bit all the way down</span></label>
+      <label><input type="checkbox"><span>Looked at overbite and overjet</span></label>
+      <label><input type="checkbox"><span>Nothing unusual has changed</span></label>
+      <label><input type="checkbox"><span>If in heavy SS, considered whether step-downs are needed</span></label>
+
+      <h4>8 · Archwire coordination, when appropriate</h4>
+      <label><input type="checkbox"><span>Especially in .018 × .025 SS or .019 × .025 SS — compared upper and lower arch forms</span></label>
+
+      <h4>9 · Patient supplies</h4>
+      <label><input type="checkbox"><span>Elastics, wax or ReliaWax, aligner supplies, other prescribed items</span></label>
+
+      <h4>10 · Documentation and next visit</h4>
+      <label><input type="checkbox"><span>What was found and what was done</span></label>
+      <label><input type="checkbox"><span>Broken brackets or loose appliances noted</span></label>
+      <label><input type="checkbox"><span>Oral hygiene concerns, elastic wear and compliance</span></label>
+      <label><input type="checkbox"><span>Next-visit instructions written</span></label>
+      <label><input type="checkbox"><span>GPS note entered</span></label>
+      <label><input type="checkbox"><span>Next planned appointment clear; next wire or procedure documented if directed</span></label>
+    </div>
+  </div>
+
+  <hr class="div">
+
+  <h2 id="reliawax"><span class="h2num">Section 6</span>ReliaWax</h2>
+
+  <p class="lede">ReliaWax is a light-cured, wax-like material used to cover irritating brackets, hooks, wires, or other orthodontic projections. Unlike regular patient wax it is placed in the office, cured with a curing light, and can stay in place much longer — through routine eating and brushing.</p>
+
+  <div class="flowline" style="text-align:center;">
+    DRY → APPLY → COVER → CURE → CHECK COMFORT
+  </div>
+
+  <ol class="steps">
+    <li><strong>Dry the area thoroughly</strong>The bracket, wire, or appliance surface must be completely dry. No primer or additional bonding preparation is required.</li>
+    <li><strong>Apply ReliaWax</strong>Place a disposable tip on the syringe and express a small amount directly over the irritating area.</li>
+    <li><strong>Cover the entire projection</strong>Shape it so it completely surrounds the sharp portion and extends slightly onto the surrounding appliance. This helps it stay securely in place.</li>
+    <li><strong>Light cure</strong>Cure for the appropriate time based on the light being used. <strong>Make sure the patient and clinical team are wearing proper curing-light eye protection.</strong></li>
+    <li><strong>Check for comfort</strong>Gently check the surface. It should create a smooth barrier between the appliance and the patient's cheek or lip.</li>
+  </ol>
+
+  <div class="note">
+    <span class="calloutlabel">Removal</span>
+    <p>ReliaWax can later be removed in one cohesive piece when it is no longer needed.</p>
+  </div>
+
+  <div class="checklist" data-day="14">
+    <h3>Lesson 5 practical check-off</h3>
+    <label><input type="checkbox" id="l5a"><span>Make a correct radio call using CHAIR → BRACKET → ETA.</span></label>
+    <label><input type="checkbox" id="l5b"><span>Gather a complete broken bracket repair setup from memory.</span></label>
+    <label><input type="checkbox" id="l5c"><span>Remove composite using the side of the bur, not the tip.</span></label>
+    <label><input type="checkbox" id="l5d"><span>Prime, place adhesive, and butter a bracket pad.</span></label>
+    <label><input type="checkbox" id="l5e"><span>Explain why the prepared bracket goes under the blue light blocker.</span></label>
+    <label><input type="checkbox" id="l5f"><span>Select the correct retractor for an anterior and a posterior bracket.</span></label>
+    <label><input type="checkbox" id="l5g"><span>Establish posterior isolation using the Z bend, cotton roll, and patient bite.</span></label>
+    <label><input type="checkbox" id="l5h"><span>Identify a properly frosty etched surface, and say what to do if it is not.</span></label>
+    <label><input type="checkbox" id="l5i"><span>Triple cure a bracket from three angles.</span></label>
+    <label><input type="checkbox" id="l5j"><span>Check the bite and state what to do if the patient is biting on the bracket.</span></label>
+    <label><input type="checkbox" id="l5k"><span>Name all seven light bar statuses and when each applies.</span></label>
+    <label><input type="checkbox" id="l5l"><span>Change a patient's status using both methods.</span></label>
+    <label><input type="checkbox" id="l5m"><span>Offer a doctor handoff without being asked.</span></label>
+    <label><input type="checkbox" id="l5n"><span>Run the full dismissal check on a live patient.</span></label>
+    <label><input type="checkbox" id="l5o"><span>Place and cure ReliaWax over a hook or wire end.</span></label>
+    <div class="progressbar"><div></div></div>
+    <div class="progresstext"></div>
+  </div>
+
+  <div class="signoff">
+    <h3>End-of-lesson review</h3>
+    <p>Run a live skit with the clinic coordinator: two chairs with broken brackets at once, competing ETAs, and a doctor handoff. The repair technique can be practiced on a typodont. The communication cannot, and it is the part that decides whether the clinic runs on time.</p>
+    <div class="sigrow">
+      <div class="sigfield"><div class="sigline"></div><div class="siglabel">Trainee</div></div>
+      <div class="sigfield"><div class="sigline"></div><div class="siglabel">Clinical instructor</div></div>
+      <div class="sigfield"><div class="sigline"></div><div class="siglabel">Date</div></div>
+    </div>
+  </div>
+
+  <nav class="pager" data-day="14"></nav>
+</div>
+<script src="days.js"></script>
+<script src="assets/manual.js"></script>
+</body>
+</html>

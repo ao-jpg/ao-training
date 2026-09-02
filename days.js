@@ -76,6 +76,13 @@ const TRAINING_DAYS = [
     week: "Hands-On Lessons",
     ready: true
   },
+  {
+    n: 14, file: "lesson-05.html", date: "Lesson 5",
+    title: "Broken Brackets, Communication & Clinic Flow",
+    blurb: "The full repair procedure, the CHAIR-BRACKET-ETA radio call, every light bar status, doctor handoffs, the dismissal check, and ReliaWax.",
+    week: "Hands-On Lessons",
+    ready: true
+  },
 
   // ---------- CLINICAL PROTOCOLS ----------
   {
@@ -169,6 +176,12 @@ const DRIVE_VIDEOS = {
   // ----- Lesson 4 -----
   "l4-step-bends":             "1a6dfTaBBfBUTiTSnTwJJcwQ9kWCPDXjh",
   "l4-archwire-coordination":  "1qkgpI7lb3yH1T3ukjMAziWd7xZqX9SGf",
-  "l4-marking-torque":         "1BZJlkVK_c87lrmuRIg_-fbIVgnqB9xeu"
+  "l4-marking-torque":         "1BZJlkVK_c87lrmuRIg_-fbIVgnqB9xeu",
+
+  // ----- Lesson 5 -----
+  "l5-broken-bracket-setup":   "",
+  "l5-broken-bracket-repair":  "",
+  "l5-buttering-bracket":      "",
+  "l5-communication":          ""
 
 };
