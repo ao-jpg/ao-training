@@ -156,7 +156,8 @@ const DRIVE_VIDEOS = {
   "l3-removing-steel-ties":    "1OaZz0G8I8x2pCEGuyzGFM96Vo_LDKCa7",   // day 3 Removing Steel ties.mp4
   "l3-placing-pc":             "1f2L_H4aziLdQ8LWJ-Adx6EkeuZX93PPX",   // Day 3 Placing PC.mp4
   "l3-removing-pc":            "1d6yQIzyAh9yxOQHRasYnarB2L7GI0dJl",
-  "l3-open-coil-spring":       "",   // Day 3 Removing PC 720.mp4
+  "l3-open-coil-spring":       "",
+  "l3-anterior-lace":          "",   // Day 3 Removing PC 720.mp4
 
   // ----- Clinical protocols -----
   "oh-check-summary":          "1y7-dvXrv2bJM9tJqcNS8jDFAH56ePsFC",
@@ -166,7 +167,6 @@ const DRIVE_VIDEOS = {
   "wire-sequence-overview":    "1q4h98N_Ci-Dpy4u5RYSISaho61ei1qLd",
 
   // ----- Lesson 4 -----
-  "l4-anterior-lace":          "",
   "l4-step-bends":             "",
   "l4-archwire-coordination":  "",
   "l4-marking-torque":         ""
