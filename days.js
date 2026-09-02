@@ -155,7 +155,8 @@ const DRIVE_VIDEOS = {
   "l3-steel-ties":             "1BODc4KB2rJiQpGXywlo7jvCEXMPEoo8P",   // Day 3 Steel Ties.mp4
   "l3-removing-steel-ties":    "1OaZz0G8I8x2pCEGuyzGFM96Vo_LDKCa7",   // day 3 Removing Steel ties.mp4
   "l3-placing-pc":             "1f2L_H4aziLdQ8LWJ-Adx6EkeuZX93PPX",   // Day 3 Placing PC.mp4
-  "l3-removing-pc":            "1d6yQIzyAh9yxOQHRasYnarB2L7GI0dJl",   // Day 3 Removing PC 720.mp4
+  "l3-removing-pc":            "1d6yQIzyAh9yxOQHRasYnarB2L7GI0dJl",
+  "l3-open-coil-spring":       "",   // Day 3 Removing PC 720.mp4
 
   // ----- Clinical protocols -----
   "oh-check-summary":          "1y7-dvXrv2bJM9tJqcNS8jDFAH56ePsFC",
