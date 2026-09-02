@@ -84,6 +84,13 @@ const TRAINING_DAYS = [
     blurb: "Interactive flowchart of the nine-step pathway, both decision points, core rules, and the full appointment breakdown for each step.",
     week: "Clinical Protocols",
     ready: true
+  },
+  {
+    n: 13, file: "lesson-04.html", date: "Lesson 4",
+    title: "Working With Wires",
+    blurb: "Cinched wires, seating difficult wires, safe distal cutting, lace, step-down bends, archwire coordination, and marking before bending.",
+    week: "Hands-On Lessons",
+    ready: true
   }
 
 ];
@@ -155,6 +162,12 @@ const DRIVE_VIDEOS = {
   "oh-four-instruments":       "1vRGFRrXnVHRdCsOv9qj-xj6ZETlHxH0J",
 
   // ----- Wire progression -----
-  "wire-sequence-overview":    "1q4h98N_Ci-Dpy4u5RYSISaho61ei1qLd"
+  "wire-sequence-overview":    "1q4h98N_Ci-Dpy4u5RYSISaho61ei1qLd",
+
+  // ----- Lesson 4 -----
+  "l4-anterior-lace":          "",
+  "l4-step-bends":             "",
+  "l4-archwire-coordination":  "",
+  "l4-marking-torque":         ""
 
 };
