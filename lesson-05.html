@@ -68,7 +68,8 @@ code{background:var(--wash);padding:2px 6px;border-radius:3px;font-family:var(--
 .qnav a:hover{color:#fff;background:var(--navy);border-color:var(--navy);}
 
 figure{margin:0 0 26px;}
-figure img{width:100%;display:block;border:1px solid var(--rule);border-radius:6px;background:var(--wash);}
+figure img{width:100%;height:auto;max-height:74vh;object-fit:contain;display:block;
+  border:1px solid var(--rule);border-radius:6px;background:var(--wash);}
 figure video{width:100%;border-radius:6px;display:block;background:#000;}
 figcaption{font-size:13.5px;color:var(--muted);margin-top:9px;}
 .medialabel{font-family:var(--mono);font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;
@@ -129,9 +130,9 @@ ol.steps>li>strong:first-child{display:block;margin-bottom:2px;}
 
 /* status cards */
 .statuses{display:grid;gap:12px;margin-bottom:26px;}
-.status{display:grid;grid-template-columns:150px 1fr;gap:18px;align-items:center;
+.status{display:grid;grid-template-columns:130px 1fr;gap:18px;align-items:center;
   border:1px solid var(--rule);border-radius:7px;padding:14px 18px;background:#fff;}
-.status img{width:100%;display:block;border-radius:4px;border:1px solid var(--rule);}
+.status img{width:100%;max-width:118px;height:auto;display:block;border-radius:4px;border:1px solid var(--rule);}
 .status h4{margin:0 0 4px;font-size:15.5px;}
 .status p{margin:0;font-size:14px;color:var(--muted);}
 .status.key{border-left:4px solid var(--teal);}
@@ -472,7 +473,15 @@ th{font-family:var(--mono);font-size:10px;letter-spacing:.14em;text-transform:up
 
   <p class="lede">Do not wait until the patient is completely ready before notifying the team. The clinic coordinator needs advance notice so they can coordinate the doctor's movement, compare priorities between chairs, update the light bar, and stop one broken bracket from disrupting the entire clinic.</p>
 
-  <p>All technicians carry a Motorola radio with a headset. The front desk has a handheld. We use it primarily to coordinate patient flow and to ask for help gathering supplies missing from a procedure.</p>
+  <p>All technicians carry a Motorola two-way radio with a headset. The front desk has a handheld. We use it primarily to coordinate patient flow and to ask for help gathering supplies missing from a procedure.</p>
+
+  <figure class="figsm">
+    <img src="img/l5-radios.png" alt="Motorola two-way radios with headsets"
+         data-kind="Photo" data-title="Motorola radios"
+         data-note="The two-way radios and headsets carried by the clinical team."
+         data-file="img/l5-radios.png" onerror="mediaPending(this)">
+    <figcaption><span class="medialabel">Equipment</span>Every technician carries one of these with a headset.</figcaption>
+  </figure>
 
   <div class="formula">
     <span class="fl">Memorize this</span>
@@ -534,56 +543,68 @@ th{font-family:var(--mono);font-size:10px;letter-spacing:.14em;text-transform:up
     data-title="Method 2" data-file="img/l5-lightbar-method-2.png" onerror="mediaPending(this)">
     <figcaption>Method 2 — Quick Light Bar in the Treatment Card.</figcaption></figure>
 
-  <h3>The three that matter most for broken brackets</h3>
+  <h3>Every status</h3>
+  <p>Listed in the order the clinic uses them. The three marked with a teal edge are the ones that matter most during a broken bracket repair.</p>
+
   <div class="statuses">
+
     <div class="status key">
-      <img src="img/l5-status-assistant-treating.png" alt="Assistant treatment patient status"
+      <img src="img/l5-status-assistant-treating.png" alt="Assistant treatment patient, green"
         data-kind="Screenshot" data-title="Assistant treatment patient" data-file="img/l5-status-assistant-treating.png" onerror="mediaPending(this)">
-      <div><h4>Assistant Treatment Patient</h4><p>The technician is actively treating the patient.</p></div>
+      <div><h4>Assistant Treatment Patient <span style="color:#2E7D32;font-weight:400;">· green</span></h4>
+      <p>The technician is actively treating the patient. This is the default while you are working.</p></div>
     </div>
+
     <div class="status key">
-      <img src="img/l5-status-attention-needed.png" alt="Attention needed status"
+      <img src="img/l5-status-attention-needed.png" alt="Attention needed, red"
         data-kind="Screenshot" data-title="Attention needed" data-file="img/l5-status-attention-needed.png" onerror="mediaPending(this)">
-      <div><h4>Attention Needed</h4><p>The patient requires significant doctor attention. A broken bracket repair is a bonding procedure, so it falls here.</p></div>
+      <div><h4>Attention Needed <span style="color:#A32020;font-weight:400;">· red</span></h4>
+      <p>The patient requires significant doctor attention. A broken bracket repair is a bonding procedure, so it belongs here.</p></div>
     </div>
+
+    <div class="status">
+      <img src="img/l5-status-immediate-attention.png" alt="Immediate attention, dark red"
+        data-kind="Screenshot" data-title="Immediate attention" data-file="img/l5-status-immediate-attention.png" onerror="mediaPending(this)">
+      <div><h4>Immediate Attention <span style="color:#6B1414;font-weight:400;">· dark red</span></h4>
+      <p>Bondings, LBR placement, TAD or gingivectomy when isolation is needed, and other procedures requiring significant doctor involvement.</p></div>
+    </div>
+
     <div class="status key">
-      <img src="img/l5-status-doctor-treating.png" alt="Doctor is currently treating status"
+      <img src="img/l5-status-doctor-treating.png" alt="Doctor is currently treating, blue"
         data-kind="Screenshot" data-title="Doctor is currently treating" data-file="img/l5-status-doctor-treating.png" onerror="mediaPending(this)">
-      <div><h4>Doctor Is Currently Treating</h4><p>The doctor is at the chair performing treatment.</p></div>
+      <div><h4>Doctor Is Currently Treating <span style="color:#1D4ED8;font-weight:400;">· blue</span></h4>
+      <p>The doctor is at the chair performing treatment. Set this once the doctor actually arrives and begins.</p></div>
     </div>
+
+    <div class="status">
+      <img src="img/l5-status-chair-occupied.png" alt="Chair is occupied, yellow"
+        data-kind="Screenshot" data-title="Chair is occupied" data-file="img/l5-status-chair-occupied.png" onerror="mediaPending(this)">
+      <div><h4>Chair Is Occupied <span style="color:#9A5B00;font-weight:400;">· yellow</span></h4>
+      <p>The patient is seated but no technician is currently available to treat them.</p></div>
+    </div>
+
+    <div class="status">
+      <img src="img/l5-status-quick-check.png" alt="Quick check, pink"
+        data-kind="Screenshot" data-title="Quick check" data-file="img/l5-status-quick-check.png" onerror="mediaPending(this)">
+      <div><h4>Quick Check <span style="color:#C2618A;font-weight:400;">· pink</span></h4>
+      <p>A brief doctor check, usually no more than about two minutes, before dismissal.</p></div>
+    </div>
+
+    <div class="status">
+      <img src="img/l5-status-conference-room.png" alt="Meet in conference room, teal"
+        data-kind="Screenshot" data-title="Meet in conference room" data-file="img/l5-status-conference-room.png" onerror="mediaPending(this)">
+      <div><h4>Meet in Conference Room <span style="color:#0E6E76;font-weight:400;">· teal</span></h4>
+      <p>Discussion needed before entering the treatment area: updates from the dentist, patient concerns, complex treatment plans, refinement scans, consultations for new patients and debonds.</p></div>
+    </div>
+
+    <div class="status">
+      <img src="img/l5-status-coordinator-treating.png" alt="Clinic coordinator is treating, magenta"
+        data-kind="Screenshot" data-title="Clinic coordinator is treating" data-file="img/l5-status-coordinator-treating.png" onerror="mediaPending(this)">
+      <div><h4>Clinic Coordinator Is Treating <span style="color:#B821B8;font-weight:400;">· magenta</span></h4>
+      <p>The coordinator has stepped in as a backup technician because the clinic is behind. The assigned tech takes back over when free.</p></div>
+    </div>
+
   </div>
-
-  <figure><img src="img/l5-status-immediate-attention.png" alt="Situations needing immediate attention"
-    data-kind="Screenshot" data-title="Immediate attention situations" data-file="img/l5-status-immediate-attention.png" onerror="mediaPending(this)">
-    <figcaption>Situations requiring immediate attention: bondings, LBR placement, TAD or gingivectomy when isolation is needed, and other procedures requiring significant doctor involvement.</figcaption></figure>
-
-  <h3>The rest of the statuses</h3>
-  <div class="statuses">
-    <div class="status">
-      <img src="img/l5-status-chair-occupied.png" alt="Chair occupied status" data-kind="Screenshot"
-        data-title="Chair occupied" data-file="img/l5-status-chair-occupied.png" onerror="mediaPending(this)">
-      <div><h4>Chair Occupied</h4><p>The patient is seated but no technician is currently available to treat them.</p></div>
-    </div>
-    <div class="status">
-      <img src="img/l5-status-quick-check.png" alt="Quick check status" data-kind="Screenshot"
-        data-title="Quick check" data-file="img/l5-status-quick-check.png" onerror="mediaPending(this)">
-      <div><h4>Quick Check</h4><p>A brief doctor check, usually no more than about two minutes before dismissal.</p></div>
-    </div>
-    <div class="status">
-      <img src="img/l5-status-conference-room.png" alt="Meet in conference room status" data-kind="Screenshot"
-        data-title="Meet in conference room" data-file="img/l5-status-conference-room.png" onerror="mediaPending(this)">
-      <div><h4>Meet in Conference Room</h4><p>Discussion needed before entering the treatment area: updates from the dentist, patient concerns, complex treatment plans, refinement scans, consultations for new patients and debonds.</p></div>
-    </div>
-    <div class="status">
-      <img src="img/l5-status-coordinator-treating.png" alt="Clinic coordinator is treating status" data-kind="Screenshot"
-        data-title="Clinic coordinator is treating" data-file="img/l5-status-coordinator-treating.png" onerror="mediaPending(this)">
-      <div><h4>Clinic Coordinator Is Treating</h4><p>The coordinator has stepped in as a backup technician because the clinic is behind. The assigned tech should take back over when free.</p></div>
-    </div>
-  </div>
-
-  <figure><img src="img/l5-statuses-overview.png" alt="All light bar statuses" data-kind="Screenshot"
-    data-title="All statuses" data-file="img/l5-statuses-overview.png" onerror="mediaPending(this)">
-    <figcaption><span class="medialabel">Reference · print for the operatory</span>Every status on one page.</figcaption></figure>
 
   <hr class="div">
 
