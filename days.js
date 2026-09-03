@@ -181,7 +181,9 @@ const DRIVE_VIDEOS = {
   // ----- Lesson 5 -----
   "l5-broken-bracket-setup":   "",
   "l5-broken-bracket-repair":  "",
-  "l5-buttering-bracket":      "",
-  "l5-communication":          ""
+  "l5-communication":          "",
+  "l5-isolation":              "",
+  "l5-cinching-ends":          "",
+  "l5-reliawax":               ""
 
 };
