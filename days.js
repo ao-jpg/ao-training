@@ -179,11 +179,11 @@ const DRIVE_VIDEOS = {
   "l4-marking-torque":         "1BZJlkVK_c87lrmuRIg_-fbIVgnqB9xeu",
 
   // ----- Lesson 5 -----
-  "l5-broken-bracket-setup":   "",
-  "l5-broken-bracket-repair":  "",
-  "l5-communication":          "",
-  "l5-isolation":              "",
-  "l5-cinching-ends":          "",
-  "l5-reliawax":               ""
+  "l5-broken-bracket-setup":   "15bdIL5WuhYj5bpK1gfV2CgknE2KtxKcA",
+  "l5-broken-bracket-repair":  "1kTmSAVUFvs37d2m99_acbYe5VYOlemPz",
+  "l5-communication":          "15FkbMJtgAE6B6iyJHc7yraCl4Kl7wKC5",
+  "l5-isolation":              "1KySv9c-GPvT22o8kx5C-BFAQ92Lzkcb_",
+  "l5-cinching-ends":          "1xeve_xsajMr4eLE7BlzF3-C2nrZJ2wTf",
+  "l5-reliawax":               "16h1RcOXOBwKRWoburNL-G4xQeH_rwhNF"
 
 };
