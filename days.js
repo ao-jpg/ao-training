@@ -98,6 +98,27 @@ const TRAINING_DAYS = [
     blurb: "Interactive flowchart of the nine-step pathway, both decision points, core rules, and the full appointment breakdown for each step.",
     week: "Clinical Protocols",
     ready: true
+  },
+  {
+    n: 15, file: "indirect-bonding.html", date: "Protocol",
+    title: "Indirect Bonding Trays",
+    blurb: "Tray setup, prepping and bonding anterior and posterior trays step by step, and when to place bite blocks.",
+    week: "Clinical Protocols",
+    ready: true
+  },
+  {
+    n: 16, file: "bite-blocks.html", date: "Protocol",
+    title: "Bite Pillows / Bite Blocks",
+    blurb: "Why bite pillows protect brackets, checking the bite, planned IDB reservoirs, direct placement, and inspecting before dismissal.",
+    week: "Clinical Protocols",
+    ready: true
+  },
+  {
+    n: 17, file: "debond.html", date: "Protocol",
+    title: "Debond",
+    blurb: "Bracket and adhesive removal by material, the burs and pliers, enamel and gingival safety, and finishing with records and the retainer scan.",
+    week: "Clinical Protocols",
+    ready: true
   }
 
 ];
@@ -149,6 +170,15 @@ const DRIVE_VIDEOS = {
   // ----- Documentation module -----
   "tx-card-intro-comprehensive":     "1P5dc7vbwflB8sJ90adk3mtbAeZSV_e2q",
   "tooth-chart-dentition-prescriptions": "1pNdqxmaKVi8ql0r-NJJxBSeCEr3IVHfJ",
+
+  // Indirect Bonding Trays lesson
+  "idb-full-procedure":        "1DHJFM-rz3EPcOtbDul7iRklWtRADONPS",
+  "idb-note":                  "1MfLxUrC0GtayFpY00Jgiw9wTbpGnoKON",
+  "idb-bite-blocks":           "1lHDO6_HSFtEqRQW13vVsh8qaE5JefFCN",
+
+  // Debond lesson
+  "debond-full-procedure":     "1sS2B7xGdtQtRrs0TgG8wVr8PmIr8W4Lw",
+  "debond-note":               "1YqxGGNI6vmUBP4CWO9gsiDrSGki4ZeHI",
 
   // ----- Lesson 3 (Drive: Video - Open / Day 3) -----
   "l3-adjustment-pack-setup":  "1fSpCYN2vd9tolGfVY-kqfRh7XRy3kAa6",   // Day 3 Adjustment pack Setup.mp4
